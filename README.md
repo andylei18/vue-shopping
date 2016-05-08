@@ -10,14 +10,18 @@
   <pre>http://localhost:8888</pre>
 ## 目录结构
 <pre>
-│  .gitignore          # 忽略无需git控制的文件  比如 node_modules
-│  package.json        # 项目配置
-│  README.md           # 项目说明
-│  index.html          # 首页
-│  webpack.dev.js      # 本地开发环境webpack配置文件
-│  webpack.build.js    # 生产环境   webpack 配置文件
+├─  .gitignore          # 忽略无需git控制的文件  比如 node_modules
+├─  package.json        # 项目配置
+├─  README.md           # 项目说明
+├─  index.html          # 首页
+├─  config.js           # 本地调试文件
 │
-├─node_modules         # npm依赖包
+│
+│
+├─n-build               # webpack 配置文件目录
+│
+│
+├─node_modules          # npm依赖包
 │
 │
 │
@@ -50,7 +54,7 @@ vue-router,
 vue-cli,
 webpack,
 Es6,
-lib-flexible
+
 
 ##感谢
 
