@@ -1,0 +1,149 @@
+html,body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,input,label,textarea,p {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none
+}
+
+article,aside,details,footer,header,nav,section {
+  display: block
+}
+
+em,i {
+  font-style: normal
+}
+
+img {
+  border: none;
+  vertical-align: middle
+}
+
+ol,ul {
+  list-style: none
+}
+
+input[type=text],input[type=password],input[type=number],input[type=email],input[type=search],input[type=tel],input[type=radio],input[type=checkbox] {
+  vertical-align: middle;
+  outline: 0;
+  color: #424242;
+  -webkit-appearance: none;
+  -webkit-user-select: text
+}
+
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder {
+  color: #999
+}
+
+select,textarea {
+  outline: 0;
+  color: #424242;
+  -webkit-appearance: none
+}
+
+textarea {
+  -webkit-user-select: text
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+
+* {
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+*:before,*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+body {
+  font: 400 14px/1.5 Arial,sans-serif;
+  color: #5e5e5e;
+  background-color: #f6f6f6;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: none
+}
+
+a {
+  color: #5e5e5e;
+  text-decoration: none
+}
+
+.glare {
+  color: #ee4566
+}
+
+.highlight {
+  color: #f5342f
+}
+
+.fl {
+  float: left!important
+}
+
+.fr {
+  float: right!important
+}
+
+.r3 {
+  -webkit-border-radius: 3px;
+  border-radius: 3px
+}
+
+.r50 {
+  -webkit-border-radius: 50%;
+  border-radius: 50%
+}
+
+.hide {
+  display: none!important;
+  visibility: hidden!important
+}
+
+.show {
+  display: block!important
+}
+
+.userselect {
+  -webkit-user-select: text
+}
+
+.clearfix:after {
+  display: block;
+  content: '';
+  clear: both;
+  visibility: hidden
+}
+input[type=text], input[type=password], input[type=number], input[type=email], input[type=search], input[type=tel], input[type=radio], input[type=checkbox] {
+  vertical-align: middle;
+  outline: 0;
+  color: #424242;
+  -webkit-appearance: none;
+  -webkit-user-select: text;
+}
+
+[class^=icon-]:before, [class*=" icon-"]:before {
+  display: inline-block;
+}
+.icon-uniE810:before {
+  content: '\e810';
+}
+.ui-head-bar .icon-uniE810:before, .ui-head-bar .icon-uniE805:before, .ui-head-bar .icon-uniE802:before, .ui-head-bar .icon-uniE80C:before {
+  background-size: 100%;
+  background-position: center;
+  width: 22px;
+  height: 21px;
+  display: inline-block;
+  content: " "!important;
+  position: relative!important;
+  left: 0!important;
+  top: 5px;
+}
+
+
+
