@@ -8,16 +8,6 @@
   body {
     background: #fff;
   }
-  #BP_headBar .title {
-    padding-left: 1.6rem;
-  }
-  #BP_headBar .badge {
-    width: 2rem;
-    color: #fff;
-    font-size: .42rem;
-    padding-right: 0.6rem;
-    white-space: nowrap;
-  }
   .form_mod {
     padding: 0.2rem 0.4rem;
     margin-bottom: 0.4rem;
@@ -192,7 +182,7 @@
     width: 100%;
   }
   /*图片验证码*/
-  .form_check {
+  /*.form_check {
     background: #f2f2f2;
     padding: 0.48rem 0.6rem;
     margin-bottom: 0.56rem;
@@ -245,7 +235,7 @@
   }
   .mb15 {
     margin-bottom: 0.6rem;
-  }
+  }*/
   /*全球登录*/
   .login_idea {
     color: #494949;

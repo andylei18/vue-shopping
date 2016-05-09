@@ -172,17 +172,6 @@ div.header_nav {
     animation-fill-mode: both
 }
 
-.ui-head-bar {
-    border-bottom: 1px solid #c9c7c8;
-    width: 100%;
-    height: 45px;
-    line-height: 45px;
-    display: -webkit-flex;
-    display: -webkit-box;
-    background: #fafafa;
-    z-index: 45
-}
-
 .ui-head-bar .subfield {
     display: inline-block;
     width: 50px;
@@ -209,32 +198,6 @@ div.header_nav {
     width: 50px;
     height: 45px;
     background: center center no-repeat
-}
-
-.ui-head-bar .title {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-    height: 45px;
-    text-align: center;
-    font-size: 18px;
-    color: #5e5e5e;
-    font-weight: 700
-}
-
-.ui-head-bar .title:before {
-    content: 'è˜‘è‡è¡—'
-}
-
-.ui-head-title {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    flex: 1;
-    height: 45px;
-    text-align: center;
-    font-size: 18px;
-    color: #5e5e5e;
-    font-weight: 700
 }
 
 .ui-head-menu,.ui-head-cart {

@@ -48,18 +48,6 @@
     display: -webkit-flex;
     display: -webkit-box;
   }
-  .ui-head-bar .title {
-    -webkit-flex: 1;
-    -webkit-box-flex: 1;
-    text-align: center;
-    line-height: 45px;
-    font-size: 18px;
-    color: #5e5e5e;
-    font-weight: 800;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
   .ui-head-bar .arr .subfield-btn, .ui-head-bar .subfield .subfield-btn {
     background: url("../assets/images/home/head_bar.png") no-repeat;
     background-size: 100% auto;
@@ -74,18 +62,7 @@
     color: #5e5e5e;
     font-size: 20px;
   }
-  .ui-head-bar {
-    position: fixed;
-    border-bottom: 1px solid #c9c7c8;
-    width: 100%;
-    height: 45px;
-    top: 0;
-    line-height: 45px;
-    display: -webkit-flex;
-    display: -webkit-box;
-    background: #fafafa;
-    z-index: 99;
-  }
+
 
 </style>
 <template>

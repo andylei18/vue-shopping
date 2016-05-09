@@ -34,6 +34,11 @@ module.exports = function(router){
           name:'login',
           component: require('./views/login.vue')
         },
+        // 注册页
+        '/register': {
+          name:'register',
+          component: require('./views/register.vue')
+        },
         // 404 页
         '*': {
             name:'404error',

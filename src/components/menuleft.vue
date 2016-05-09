@@ -116,7 +116,7 @@
       </li>
     </ul>
     <div class="sf-login">
-      <p id="M_Login"><i class="icon-usr"></i>请登录</p>
+      <p id="BP_Login" v-link="{name:'login'}"><i class="icon-usr"></i>请登录</p>
     </div>
 
   </div>
