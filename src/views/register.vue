@@ -238,19 +238,33 @@
       //获取验证码
       getCode(){
         const text = this.phone
+        
+        let alertFuc=()=>{
+              Toast({
+                message: '请输入正确得手机号码!',
+                position: 'middle',
+                duration: 3000
+              })
+              this.phone=''
+              return false
+        }
+
 
         if (text.trim()) {
 
+          if(!(/^1[3|4|5|7|8]\d{9}$/.test(text))){ 
+              alertFuc()
+
+          }else{
+
+            //发送验证码请求
+            console.log("ok")
+
+          } 
 
         }else{
 
-          Toast({
-            message: '请输入正确得手机号码!',
-            position: 'middle',
-            duration: 3000
-          })
-
-          return false
+          alertFuc()
         }
 
       },

@@ -272,7 +272,7 @@
         <i class="icon-back"></i>
       </a>
       <p class="title">登录</p>
-      <span class="badge">立即注册</span>
+      <span class="badge" v-link="{name:'register'}">立即注册</span>
     </header>
     <div id="views">
 

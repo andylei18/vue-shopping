@@ -1,7 +1,7 @@
 <style>
   .ui-head-bar .badge {
     display: inline-block;
-    width: 50px;
+    width: 2rem;
     text-align: center;
     position: relative;
     color: #727272!important;

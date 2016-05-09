@@ -7,12 +7,6 @@ import App from './app.vue'
 import Toast from 'vue-toast-mobile'
 window.Toast = Toast;
 
-/*Toast({
- message: '你好啊!!!!!!!!!',
- position: 'top',
- duration: 5000
- });*/
-
 Vue.use(VueRouter)
 Vue.use(VueResource)
 
