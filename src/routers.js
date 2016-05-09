@@ -27,6 +27,13 @@ module.exports = function(router){
 
 
 
+
+
+        // 登陆页
+        '/login': {
+          name:'login',
+          component: require('./views/login.vue')
+        },
         // 404 页
         '*': {
             name:'404error',
