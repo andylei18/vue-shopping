@@ -1,7 +1,10 @@
 <style src="../../../src/assets/styles/module/home/views.css"></style>
 
 <template>
-  <div class="ui-app">
+  <div class="ui-app with-header">
+
+    <!--欢迎动画组件-->
+    <cover :show="loadding.show"></cover>
 
     <!--头部组件-->
     <head-module></head-module>
@@ -16,7 +19,7 @@
 <script>
 
   //加载公用小组件
-  import Cover from '../../components/cover.vue'
+  import Cover from '../../components/cover.vue'//欢迎动画组件
   import Mask from '../../components/mask.vue'
 
   //加载局部业务组件
@@ -55,6 +58,7 @@
 
           let successCallback =(json) => {
             _self.$route.router.app.loading = false
+            _self.loadding.show = false
             //console.log(json)
           }
 

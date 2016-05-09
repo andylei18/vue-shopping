@@ -1,10 +1,15 @@
 <template>
 
-  <!--头部组件-->
-  <head-module></head-module>
+  <div class="ui-app">
 
-  <!--列表组件-->
-  <list-module></list-module>
+    <!--头部组件-->
+    <head-module></head-module>
+
+    <!--列表组件-->
+    <list-module></list-module>
+
+  </div>
+
 
 </template>
 

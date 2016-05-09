@@ -1,5 +1,7 @@
 @charset "utf-8";
-
+.with-header {
+  padding-top: 45px;
+}
 #welcome-wraps .mr10 {
   margin-right: .1rem
 }

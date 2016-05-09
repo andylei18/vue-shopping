@@ -6,9 +6,6 @@
   .v-cloak--block,.v-cloak--inline,.v-cloak--inlineBlock{
     display: none;
   }
-  .with-header {
-    padding-top: 45px;
-  }
   .ui-view {
     min-width: 320px;
     max-width: 750px;
@@ -50,7 +47,7 @@
     <loading :show="loading"></loading>
 
     <!-- 缓存一级路由切换的页面 -->
-    <router-view class="with-header ui-view" keep-alive :transition="effect" transition-mode="out-in"></router-view>
+    <router-view class="ui-view" keep-alive :transition="effect" transition-mode="out-in"></router-view>
 
   </div>
 
