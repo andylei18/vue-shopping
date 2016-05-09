@@ -130,7 +130,7 @@
     methods:{
       //关闭菜单
       closeMenuEvent(){
-    
+
         this.$parent.menu.show = false
 
         this.$parent.mask = false

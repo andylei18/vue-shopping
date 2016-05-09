@@ -90,7 +90,7 @@
 </style>
 <template>
 
-  <header id="BP_headBar" class="ui-head-bar">
+  <header id="BP_headBar" class="ui-head-bar" @click.stop>
     <span class="subfield J_subfield" @click="openMenuEvent()">
       <i class="subfield-btn"></i>
     </span>

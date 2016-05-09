@@ -53,6 +53,16 @@
           const _self = this
           //请求列表全部数据
           _self.getAjax()
+
+          document.addEventListener("click",function(e){
+
+
+            //关闭加入购物车
+            _self.menu.show = false;
+            _self.mask = false;
+
+          });
+
           //滚动加载
           //_self.scrollList();
         },
