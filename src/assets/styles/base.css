@@ -133,6 +133,11 @@ input[type=text], input[type=password], input[type=number], input[type=email], i
 .icon-uniE810:before {
   content: '\e810';
 }
+
+.ui-app{
+  max-width: 750px;
+  margin: 0 auto;
+}
 .ui-head-bar .icon-uniE810:before, .ui-head-bar .icon-uniE805:before, .ui-head-bar .icon-uniE802:before, .ui-head-bar .icon-uniE80C:before {
   background-size: 100%;
   background-position: center;

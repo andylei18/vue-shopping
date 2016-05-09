@@ -7,7 +7,7 @@
     color: #727272!important;
   }
   .badge.icon-uniE810:before, .ui-head-bar .icon-uniE810:before {
-    background: url("../assets/images/home/cart.jpeg");
+    background-image: url("../assets/images/home/cart.jpeg");
   }
   .ui-head-bar .search-enter-btn {
     background: url("../assets/images/home/icon.png") center no-repeat;
