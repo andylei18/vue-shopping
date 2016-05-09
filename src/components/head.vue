@@ -7,10 +7,10 @@
     color: #727272!important;
   }
   .badge.icon-uniE810:before, .ui-head-bar .icon-uniE810:before {
-    background: url("../../../src/assets/images/home/cart.jpeg");
+    background: url("../assets/images/home/cart.jpeg");
   }
   .ui-head-bar .search-enter-btn {
-    background: url("../../../src/assets/images/home/icon.png") center no-repeat;
+    background: url("../assets/images/home/icon.png") center no-repeat;
     background-size: 100% 100%;
     width: 25px;
     height: 25px;
@@ -42,7 +42,7 @@
     line-height: 30px;
     top: 7px;
     border: 1px #f3f3f3 solid;
-    background: #ececec url("../../../src/assets/images/home/search.png") 2px center no-repeat;
+    background: #ececec url("../assets/images/home/search.png") 2px center no-repeat;
     background-size: 17px 15px;
     text-align: left;
     display: -webkit-flex;
@@ -61,7 +61,7 @@
     overflow: hidden;
   }
   .ui-head-bar .arr .subfield-btn, .ui-head-bar .subfield .subfield-btn {
-    background: url("../../../src/assets/images/home/head_bar.png") no-repeat;
+    background: url("../assets/images/home/head_bar.png") no-repeat;
     background-size: 100% auto;
     width: 20px;
     height: 15px;
