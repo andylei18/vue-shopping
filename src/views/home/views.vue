@@ -25,7 +25,7 @@
       <showcase-module></showcase-module>
 
       <!--外链下载APP组件-->
-      <!--<down-module></down-module>-->
+      <down-module></down-module>
 
 
     </div>
