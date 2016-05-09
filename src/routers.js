@@ -16,6 +16,14 @@ module.exports = function(router){
             }
         },
 
+        //限时秒杀活动页
+        '/timelimit':{
+          name:'timelimit',
+          //异步处理大量数据
+          component: function(reslove){
+            return require(['./views/timelimit/index.vue'],reslove)
+          }
+        },
 
 
 

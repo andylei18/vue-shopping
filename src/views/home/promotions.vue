@@ -10,7 +10,7 @@
 
           <div class="item-mod-main">
 
-            <a href="http://qiang.mogujie.com/fastbuy/indexh5?topId=15ns0&amp;topType=2&amp;eventTime=1462637820" class="item-promotion">
+            <a href="javascript:void(0);" class="item-promotion" v-link="{name:'timelimit'}">
               <div class="fast-title m-flex m-flex-center">
                 <i class="fast-tag"></i>
                 <span>限时快抢</span>

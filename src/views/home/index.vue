@@ -20,7 +20,7 @@
   import Mask from '../../components/mask.vue'
 
   //加载局部业务组件
-  import HeadModule from '../../views/home/head.vue'//头部组件
+  import HeadModule from '../../components/head.vue'//头部组件
   import LoginModule from '../../views/home/login.vue'//首页登陆
   import ViewsModule from '../../views/home/views.vue'//中心数据组件
 
