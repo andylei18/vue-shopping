@@ -91,7 +91,7 @@
 <template>
 
   <header id="BP_headBar" class="ui-head-bar">
-    <span class="subfield J_subfield">
+    <span class="subfield J_subfield" @click="openMenuEvent()">
       <i class="subfield-btn"></i>
     </span>
     <form id="search_from" action="/x6/search" class="title">
@@ -107,5 +107,18 @@
 
 </template>
 <script>
+
+  export default {
+
+    methods:{
+      //打开菜单
+      openMenuEvent(){
+
+        this.$parent.menu.show = true
+        this.$parent.mask = true
+      }
+    }
+
+  }
 
 </script>
