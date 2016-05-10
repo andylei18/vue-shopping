@@ -161,7 +161,8 @@
           <div class="form-group">
             <div class="area-text">国家与地区</div>
             <input type="text" class="input area-value js-area-code" value="中国" readonly="true">
-            <a class="js-select-area area-arrow" href="http://m.mogujie.com/x6/login/country"></a>
+            <a class="js-select-area area-arrow" href="javascript:void(0);"></a>
+           <!-- <a class="js-select-area area-arrow" href="http://m.mogujie.com/x6/login/country"></a>-->
           </div>
           <div class="form-group">
             <div class="plus">+</div>

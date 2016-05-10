@@ -13,13 +13,13 @@
 
 
       <!--欢迎业务组件-->
-      <markets-module></markets-module>
+      <markets-module :markets="markets"></markets-module>
 
       <!--秒杀倒计时组件-->
       <promotions-module></promotions-module>
 
       <!--商品组件-->
-      <goods-module></goods-module>
+      <goods-module :goods="goods"></goods-module>
 
       <!--分类展示组件-->
       <showcase-module></showcase-module>
@@ -44,7 +44,7 @@
   import DownModule from '../../views/home/down.vue'//外链下载APP组件
 
   export default {
-
+    props:['goods','markets'],
     components: {
       MarketsModule,PromotionsModule,GoodsModule,ShowcaseModule,DownModule
     },

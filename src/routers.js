@@ -15,7 +15,6 @@ module.exports = function(router){
                 return require(['./views/home/index.vue'],reslove)
             }
         },
-
         //限时秒杀活动页
         '/timelimit':{
           name:'timelimit',
@@ -25,6 +24,15 @@ module.exports = function(router){
           }
         },
 
+
+        //全部商品模块页面
+        '/goods':{
+          name:'goods',
+          //异步处理大量数据
+          component: function(reslove){
+            return require(['./views/goods/index.vue'],reslove)
+          }
+        },
 
 
 

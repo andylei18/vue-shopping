@@ -302,7 +302,10 @@
           </div>
         </div>
 
-        <p class="clearfix"> <a href="javascript:void;" class="overseaslogin login_idea fl">全球手机登录</a> <a href="javascript:void;" class="findpwd login_idea fr">忘记密码?</a> </p>
+        <p class="clearfix">
+          <a href="javascript:void(0);" class="overseaslogin login_idea fl">全球手机登录</a>
+          <a href="javascript:void(0);" class="findpwd login_idea fr">忘记密码?</a>
+        </p>
 
         <p class="copyright">©2015 Mogujie.com 杭州卷瓜网络有限公司</p>
 

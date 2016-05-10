@@ -14,7 +14,7 @@
     <!--首页登陆组件-->
     <login-module></login-module>
     <!--中心数据组件-->
-    <views-module></views-module>
+    <views-module :goods="goodslist" :markets="marketslist"></views-module>
 
   </div>
 </template>
@@ -41,7 +41,9 @@
              menu:{
                show:false,
                list:[]
-             }
+             },
+             marketslist:[],                      //特色市场模块数据
+             goodslist:[]                         //全部市场模块数据
           }
       },
       components: {
@@ -50,16 +52,14 @@
       route: {
         data (transition) {
           const _self = this
+
           //请求列表全部数据
-          _self.getAjax()
+          _self.getAjax(transition)
 
           document.addEventListener("click",function(e){
-
-
             //关闭加入购物车
             _self.menu.show = false;
             _self.mask = false;
-
           });
 
           //滚动加载
@@ -72,13 +72,27 @@
       },
       methods: {
         //请求列表全部数据
-        getAjax(){
+        getAjax(transition){
           const _self = this
 
           let successCallback =(json) => {
+
             _self.$route.router.app.loading = false
             _self.loadding.show = false
-            //console.log(json)
+
+            const jsondata = json.data
+
+            if(jsondata&&jsondata.code==0){
+
+              //实时异步队列更新数据
+              transition.next({
+                marketslist:jsondata.data.markets,
+                goodslist:jsondata.data.goods
+
+              })
+            }
+
+
           }
 
           let errorCallback = (json)=> {
