@@ -13,7 +13,7 @@
       <ul class="clearfix">
 
         <li class="module-item" v-for="item in goods">
-          <a href="http://m.mogujie.com/x6/markets/clothing/jacket?title=上衣&amp;mt=10.933.r59313">
+          <a v-link="{name:'goods',params:{mt:item.mt,type:item.type} }">
             <div class="item-logo">
               <img :src="item.pic" alt="">
             </div>

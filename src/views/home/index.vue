@@ -38,6 +38,7 @@
              loadding:{
                show:true
              },
+             loginpic:"",
              menu:{
                show:false,
                list:[]

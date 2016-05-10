@@ -15,7 +15,7 @@ module.exports = function(router){
                 return require(['./views/home/index.vue'],reslove)
             }
         },
-        //限时秒杀活动页
+        //限时秒杀活动模块  入口页面
         '/timelimit':{
           name:'timelimit',
           //异步处理大量数据
@@ -23,7 +23,7 @@ module.exports = function(router){
             return require(['./views/timelimit/index.vue'],reslove)
           }
         },
-        //限时秒杀活动页
+        //特色市场模块  入口页面
         '/markets/goods':{
           name:'markets_goods',
           //异步处理大量数据
@@ -32,8 +32,8 @@ module.exports = function(router){
           }
         },
 
-        //全部商品模块页面
-        '/goods':{
+        //全部商品模块页面  入口页面
+        '/goods/:mt/:type':{
           name:'goods',
           //异步处理大量数据
           component: function(reslove){
@@ -44,6 +44,14 @@ module.exports = function(router){
 
 
 
+        //购物车模块页面  入口页面
+        '/cart':{
+          name:'cart',
+          //异步处理大量数据
+          component: function(reslove){
+            return require(['./views/cart/index.vue'],reslove)
+          }
+        },
         // 登陆页
         '/login': {
           name:'login',

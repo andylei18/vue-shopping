@@ -7,15 +7,7 @@
     color: #727272!important;
   }
   .badge.icon-uniE810:before, .ui-head-bar .icon-uniE810:before {
-    background-image: url("../assets/images/home/cart.jpeg");
-  }
-  .ui-head-bar .search-enter-btn {
-    background: url("../assets/images/home/icon.png") center no-repeat;
-    background-size: 100% 100%;
-    width: 25px;
-    height: 25px;
-    display: inline-block;
-    margin: 0 5px;
+    background-image: url("../../assets/images/home/cart.jpeg");
   }
   .ui-head-bar .search-keywords input[type=text] {
     vertical-align: top;
@@ -28,28 +20,8 @@
     top: 2px;
     font-size: 16px;
   }
-  .ui-head-bar .search-keywords {
-    -webkit-flex: 1;
-    -webkit-box-flex: 1;
-    overflow: hidden;
-    padding: 0 5px 0 20px;
-  }
-  .ui-head-bar .search {
-    display: block;
-    position: relative;
-    border-radius: 1px;
-    height: 30px;
-    line-height: 30px;
-    top: 7px;
-    border: 1px #f3f3f3 solid;
-    background: #ececec url("../assets/images/home/search.png") 2px center no-repeat;
-    background-size: 17px 15px;
-    text-align: left;
-    display: -webkit-flex;
-    display: -webkit-box;
-  }
   .ui-head-bar .arr .subfield-btn, .ui-head-bar .subfield .subfield-btn {
-    background: url("../assets/images/home/head_bar.png") no-repeat;
+    background: url("../../assets/images/home/head_bar.png") no-repeat;
     background-size: 100% auto;
     width: 20px;
     height: 15px;
@@ -65,26 +37,20 @@
   .ui-head-bar .badge-car {
     width: 1.2rem;
   }
-
 </style>
+
 <template>
 
   <header id="BP_headBar" class="ui-head-bar" @click.stop>
     <span class="subfield J_subfield" @click="openMenuEvent">
       <i class="subfield-btn"></i>
     </span>
-    <form id="search_from" action="/x6/search" class="title">
-      <div class="search">
-        <p class="search-keywords">
-          <input type="text" name="keywords" id="J_search_keywords">
-        </p>
-        <a href="javascript:;" class="search-enter-btn J_search_btn"></a>
-      </div>
-    </form>
+    <p class="title">上衣</p>
     <span class="badge icon-uniE810 badge-car" v-link="{name:'cart'}"></span>
   </header>
 
 </template>
+
 <script>
 
   export default {
