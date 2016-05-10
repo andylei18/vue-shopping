@@ -89,7 +89,11 @@
               transition.next({
                 loginpic:jsondata.data.advertisement,
                 marketslist:jsondata.data.markets,
-                goodslist:jsondata.data.goods
+                goodslist:jsondata.data.goods,
+                menu:{
+                  show:false,
+                  list:jsondata.data.goods
+                },
 
               })
             }

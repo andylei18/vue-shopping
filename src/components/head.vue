@@ -1,4 +1,4 @@
-<style src="../../assets/style/components/head.css"></style>
+<style src="../assets/styles/components/head.css"></style>
 <template>
 
   <header id="BP_headBar" class="ui-head-bar" @click.stop>

@@ -1,4 +1,4 @@
-<style src="../../assets/style/components/head.css"></style>
+<style src="../../../src/assets/styles/components/head.css"></style>
 <template>
 
   <header id="BP_headBar" class="ui-head-bar" @click.stop>
@@ -14,7 +14,7 @@
 <script>
 
   export default {
-
+    props:['title'],
     methods:{
       //打开菜单
       openMenuEvent(){

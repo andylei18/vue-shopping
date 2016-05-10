@@ -35,6 +35,9 @@
         menu:{
           show:false,
           list:[]
+        },
+        goodsData:{
+          title:""
         }
       }
     },
@@ -44,8 +47,8 @@
     route: {
       data(transition){
         const  _self = this
+        _self.goodsData.title = transition.to.params.title
 
-        console.log(transition)
         //请求列表全部数据
         _self.getAjax(transition)
 

@@ -111,8 +111,8 @@
 
     <ul class="sf-list clearfix">
 
-      <li><a href="/x6/">首页</a></li>
-      <li><a href="http://m.mogujie.com/x6/markets/taste/home">轻时髦</a>
+      <li><a v-link="{name:'home'}">首页</a></li>
+      <li v-for="item in list"><a v-link="{name:'goods',params:{mt:item.mt,type:item.type} }">{{item.title}}</a>
       </li>
     </ul>
     <div class="sf-login">
