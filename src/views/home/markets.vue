@@ -1,6 +1,6 @@
 <template>
 
-  <div id="J-buy-markets" class="buy-markets lazyData">
+  <div class="buy-markets lazyData">
 
     <div class="markets-wrap module-list-wrap module-wrap">
 

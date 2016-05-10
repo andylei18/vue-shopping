@@ -12,7 +12,7 @@
     <!--头部组件-->
     <head-module></head-module>
     <!--首页登陆组件-->
-    <login-module></login-module>
+    <login-module :loginpic="loginpic"></login-module>
     <!--中心数据组件-->
     <views-module :goods="goodslist" :markets="marketslist"></views-module>
 
@@ -86,6 +86,7 @@
 
               //实时异步队列更新数据
               transition.next({
+                loginpic:jsondata.data.advertisement,
                 marketslist:jsondata.data.markets,
                 goodslist:jsondata.data.goods
 

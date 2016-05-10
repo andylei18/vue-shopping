@@ -6,7 +6,7 @@
   <div id="BP_topLogin" class="ui-top-login">
 
     <div class="form-shunt" v-show="shunt">
-      <img src="http://s17.mogucdn.com/p1/151027/upload_ie4dqzlggzrgizrxgqzdambqgiyde_750x600.jpg" width="100%">
+      <img :src="loginpic" width="100%">
       <div class="ui-top-login-controller">
         <a href="javascript:void(0);" class="btn-login J_shuntLogin" @click="showProcess">登录</a>
         <a href="http://www.mogujie.com/mage/jump/go?link=http%3a%2f%2fa.app.qq.com%2fo%2fsimple.jsp%3fpkgname%3dcom.mogujie%26ckey%3dCK1296840483898&amp;mt=10.151.r7642" class="btn-download">下载</a>
@@ -84,6 +84,7 @@
         regist:false
       }
     },
+    props:['loginpic'],
     methods:{
       //显示登陆,注册流程
       showProcess(){

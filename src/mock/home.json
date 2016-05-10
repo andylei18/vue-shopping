@@ -2,6 +2,7 @@
   "code":0,
   "message":"请求成功!",
   "data":{
+    "advertisement":"../../../../src/assets/images/home/advertisement.jpg",
     "markets":[
       {"title":"心水好货","mt":"10.932.r62904","pic":"../../../../src/assets/images/markets/list/xihu.jpg","desc":"新款春装上阵"},
       {"title":"运动","mt":"10.932.r62906","pic":"../../../../src/assets/images/markets/list/dama.jpg","desc":"轻松购出好身材"},
