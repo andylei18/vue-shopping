@@ -23,7 +23,14 @@ module.exports = function(router){
             return require(['./views/timelimit/index.vue'],reslove)
           }
         },
-
+        //限时秒杀活动页
+        '/markets/goods':{
+          name:'markets_goods',
+          //异步处理大量数据
+          component: function(reslove){
+            return require(['./views/markets/index.vue'],reslove)
+          }
+        },
 
         //全部商品模块页面
         '/goods':{
