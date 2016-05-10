@@ -62,7 +62,9 @@
     color: #5e5e5e;
     font-size: 20px;
   }
-
+  .ui-head-bar .badge-car {
+    width: 1.2rem;
+  }
 
 </style>
 <template>
@@ -79,7 +81,7 @@
         <a href="javascript:;" class="search-enter-btn J_search_btn"></a>
       </div>
     </form>
-    <span class="badge icon-uniE810"></span>
+    <span class="badge icon-uniE810 badge-car"></span>
   </header>
 
 </template>

@@ -508,9 +508,9 @@
   background: url("../../../../../src/assets/images/home/return.jpeg") no-repeat 0 center;
   background-size: .21rem .38rem;
   text-indent: .28rem;
-  width: 1.05rem;
-  height: .28rem;
-  line-height: .28rem;
+  width: 1.2rem;
+  height: .48rem;
+  line-height: .48rem;
   display: inline-block;
   position: absolute;
   left: .28rem;
@@ -521,12 +521,12 @@
 
 .ui-top-login .topLogin_btn {
   color: #333;
-  height: .28rem;
-  line-height: .28rem;
-  font-size: .32rem;
+  height: .48rem;
+  line-height: .48rem;
+  font-size: .4rem;
   position: absolute;
   right: .28rem;
-  top: .21rem
+  top: .21rem;
 }
 
 .ui-top-login .form-shunt {
@@ -618,23 +618,23 @@
 
 .ui-top-login .login-qq {
   margin-right: .3rem;
-  width: 1.42rem;
-  height: .35rem;
+  width: 2rem;
+  height: .4rem;
   background: url("../../../../../src/assets/images/home/qq_login.png") 0 0 no-repeat;
   background-size: 100%
 }
 
 .ui-top-login .login-wb {
   margin-right: .3rem;
-  width: 1.5rem;
-  height: .35rem;
+  width: 2rem;
+  height: .4rem;
   background: url("../../../../../src/assets/images/home/wb_login.png") 0 0 no-repeat;
   background-size: 100%
 }
 
 .ui-top-login .login-wechat {
-  width: 1.5rem;
-  height: .35rem;
+  width: 2rem;
+  height: .4rem;
   background: url("../../../../../src/assets/images/home/wx_login.png") 0 0 no-repeat;
   background-size: 100%
 }
@@ -715,7 +715,6 @@
 
 .ui-top-login .form-login,.ui-top-login .form-regist {
   font-size: .32rem;
-  display: none;
   background: #ecedef;
   padding: 1rem 1.1rem .25rem 1.1rem
 }

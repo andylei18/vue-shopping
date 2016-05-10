@@ -1,11 +1,14 @@
+<style>
+
+</style>
 <template>
 
   <div id="BP_topLogin" class="ui-top-login">
 
-    <div class="form-shunt">
+    <div class="form-shunt" v-show="shunt">
       <img src="http://s17.mogucdn.com/p1/151027/upload_ie4dqzlggzrgizrxgqzdambqgiyde_750x600.jpg" width="100%">
       <div class="ui-top-login-controller">
-        <a href="javascript:;" class="btn-login J_shuntLogin">登录</a>
+        <a href="javascript:void(0);" class="btn-login J_shuntLogin" @click="showProcess">登录</a>
         <a href="http://www.mogujie.com/mage/jump/go?link=http%3a%2f%2fa.app.qq.com%2fo%2fsimple.jsp%3fpkgname%3dcom.mogujie%26ckey%3dCK1296840483898&amp;mt=10.151.r7642" class="btn-download">下载</a>
         <div class="other-login">
           <a href="javascript:void(0);" class="login-qq js-third-login"></a>
@@ -14,9 +17,9 @@
       </div>
     </div>
 
-    <div class="form-login">
-      <a href="javascript:;" class="topLogin_btn topLogin_btn_back J_back">返回</a>
-      <a href="javascript:;" class="topLogin_btn J_shuntReg">注册</a>
+    <div class="form-login" v-show="login">
+      <a href="javascript:void(0);" class="topLogin_btn topLogin_btn_back J_back" @click="returnProcess">返回</a>
+      <a href="javascript:void(0);" class="topLogin_btn J_shuntReg" v-link="{name:'register'}">注册</a>
       <form action="" method="post" id="login_form">
         <div class="form_mod_wrap mb15 r3">
           <div class="form_mod"> <div>
@@ -40,7 +43,7 @@
     </div>
 
 
-    <div class="form-regist">
+    <div class="form-regist" v-show="regist">
       <a href="javascript:;" class="topLogin_btn topLogin_btn_back J_back">返回</a>
       <a href="javascript:;" class="topLogin_btn J_shuntLogin">登录</a>
       <form action="" method="post" id="regist_form">
@@ -72,5 +75,28 @@
 </template>
 
 <script>
+
+  export default {
+    data(){
+      return{
+        shunt:true,
+        login:false,
+        regist:false
+      }
+    },
+    methods:{
+      //显示登陆,注册流程
+      showProcess(){
+        this.shunt = false
+        this.login = true
+      },
+      //隐藏登陆,注册流程
+      returnProcess(){
+        this.login = false
+        this.shunt = true
+
+      }
+    }
+  }
 
 </script>

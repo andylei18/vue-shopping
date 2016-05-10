@@ -5,7 +5,7 @@ import App from './app.vue'
 
 //消息提醒
 import Toast from 'vue-toast-mobile'
-window.Toast = Toast;
+window.Toast = Toast
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -14,6 +14,8 @@ Vue.http.options.headers = {
 	'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'
 }
 Vue.http.options.emulateJSON = true
+Vue.config.debug = true
+
 
 const router = new VueRouter({
 	//abstract:true,
@@ -29,3 +31,5 @@ const router = new VueRouter({
 require('./routers')(router);
 
 router.start(App,'#app');
+
+

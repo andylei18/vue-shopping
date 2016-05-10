@@ -1,5 +1,4 @@
 <style src="../../../src/assets/styles/module/home/views.css"></style>
-
 <template>
   <div class="ui-app with-header">
 
