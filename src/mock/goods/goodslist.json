@@ -1,12 +1,13 @@
 {
   "code":0,
   "message":"获取数据成功!",
-  "data":[
-    {"title":"上衣","mt":"10.933.r59313","type":"jacket","pic":"../../../assets/images/goods/list/jacket.png","desc":"底价新品壁咚"},
-    {"title":"裤子","mt":"10.933.r59165","type":"trousers","pic":"../../../assets/images/goods/list/trousers.jpg","desc":"春季最热卖"},
-    {"title":"裙子","mt":"10.933.r63562","type":"skirt","pic":"../../../assets/images/goods/list/skirt.jpg","desc":"焕新你的衣橱"},
-    {"title":"内衣","mt":"10.933.r59524","type":"underwear","pic":"../../../assets/images/goods/list/underwear.jpg","desc":"好鞋不将“旧”"},
-    {"title":"女鞋","mt":"10.933.r59004","type":"shoes","pic":"../../../assets/images/goods/list/shoes.png","desc":"焕新你的衣橱"}
-
-  ]
+  "data":{
+    "catelist":[
+      {"mt":"10.482.r22356","title":"春季新品","pic":"http://s8.mogucdn.com/p1/160304/fn_ifrdsmzwge2tcobrg4zdambqmeyde_120x120.jpg"},
+      {"mt":"10.482.r22355","title":"T恤","pic":"http://s17.mogucdn.com/p1/160304/upload_ie3tkyjsgu4danzrg4zdambqgayde_120x120.jpg"},
+      {"mt":"10.482.r49762","title":"省心套装","pic":"http://s16.mogucdn.com/p1/160304/upload_ifqtmzdbgu4danzrg4zdambqgyyde_120x120.jpg"},
+      {"mt":"10.482.r49766","title":"衬衫","pic":"http://s7.mogucdn.com/p1/160304/fn_ie4dgntfgq2taobrg4zdambqgiyde_120x120.jpg"},
+      {"mt":"10.482.r36370","title":"棒球外套","pic":"http://s17.mogucdn.com/p1/160304/upload_ifqwmyjqgzqtanzrg4zdambqgyyde_120x120.jpg"}
+    ]
+  }
 }

@@ -11,7 +11,7 @@
     <!--头部组件-->
     <head-module></head-module>
     <!--内容页面组件-->
-    <views-module></views-module>
+    <views-module :goodsdata="goodsdata"></views-module>
 
   </div>
 
@@ -36,9 +36,7 @@
           show:false,
           list:[]
         },
-        goodsData:{
-          title:""
-        }
+        goodsdata:""
       }
     },
     components: {
@@ -47,7 +45,6 @@
     route: {
       data(transition){
         const  _self = this
-        _self.goodsData.title = transition.to.params.title
 
         //请求列表全部数据
         _self.getAjax(transition)
@@ -63,10 +60,19 @@
       //请求列表全部数据
       getAjax(transition){
         const _self = this
+        const _mt = transition.to.params.mt
 
         let successCallback =(json) => {
+          const jsondata = json.data
 
           _self.$route.router.app.loading = false
+
+          if(jsondata&&jsondata.code==0){
+            //实时异步队列更新数据
+            transition.next({
+              goodsdata:jsondata.data
+            })
+          }
 
         }
 
@@ -74,15 +80,7 @@
           //console.log(json)
         }
 
-        let data = {
-          id:'001'
-        }
-
-        let options ={
-          name:'lei'
-        }
-
-        _self.$http.get('../../src/mock/home.json', [data]).then(successCallback, errorCallback)
+        _self.$http.get('../../src/mock/goods/goodslist.json?mt='+ _mt).then(successCallback, errorCallback)
 
       }
     }

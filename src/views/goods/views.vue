@@ -7,12 +7,12 @@
   <hotsale-module></hotsale-module>
   <!--cate-->
   <ul class="cate-list ctg-list">
-    <li>
-      <a href="http://act.mogujie.com/h5goodswall?fcid=10054926&amp;sort=newtype&amp;searchTag=802&amp;mt=10.482.r22356">
+    <li v-for="cate in goodsdata.catelist">
+      <a v-link="{name:'catelist',params:{mt:cate.mt}}">
         <div class="img-wrap">
-          <img class="fadeIn" src="http://s8.mogucdn.com/p1/160304/fn_ifrdsmzwge2tcobrg4zdambqmeyde_120x120.jpg" alt="春季新品">
+          <img class="fadeIn" :src="cate.pic" alt="{{cate.title}}">
         </div>
-        <p>春季新品</p>
+        <p>{{cate.title}}</p>
       </a>
     </li>
   </ul>
@@ -39,7 +39,7 @@
   import HotsaleModule from '../../views/goods/hotsale.vue' //热门组件
 
   export default {
-    props:[],
+    props:['goodsdata'],
     components: {
       SwipeModule,HotsaleModule
     }

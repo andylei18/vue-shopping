@@ -40,6 +40,22 @@ module.exports = function(router){
             return require(['./views/goods/index.vue'],reslove)
           }
         },
+            //全部商品模块catelist页面
+            '/catelist/:mt':{
+              name:'catelist',
+              //异步处理大量数据
+              component: function(reslove){
+                return require(['./views/goods/catelist.vue'],reslove)
+              }
+            },
+            //全部商品模块catedetail页面
+            '/catedetail/:mt':{
+              name:'catedetail',
+              //异步处理大量数据
+              component: function(reslove){
+                return require(['./views/goods/catedetail.vue'],reslove)
+              }
+            },
 
 
 

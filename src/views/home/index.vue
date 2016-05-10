@@ -77,11 +77,9 @@
           const _self = this
 
           let successCallback =(json) => {
-
+            const jsondata = json.data
             _self.$route.router.app.loading = false
             _self.loadding.show = false
-
-            const jsondata = json.data
 
             if(jsondata&&jsondata.code==0){
 

@@ -1,0 +1,9 @@
+{
+  "code":0,
+  "message":"获取数据成功!",
+  "data":[
+    {"id":"001","title":"【JY STUDIO】夏装新款韩版荷叶边镂空吊坠宽松T恤","imgtag":true,"pic":"http://s22.mogucdn.com/p1/160503/89849881_ifrdezjrg42tqojuhazdambqmeyde_640x960.jpg_220x330.webp","price":"57.12","count":"4992","shelf":"一周前 上架"},
+    {"id":"002","title":"粉嫩嫩V领系绳荷叶边喇叭袖衬衫","imgtag":false,"pic":"http://s18.mogucdn.com/p1/160503/103629344_ie4dazrugeytkzbuhazdambqgiyde_640x960.jpg_220x330.webp","price":"39.9","count":"6541","shelf":"一周前 上架"},
+    {"id":"003","title":"✌正版✌时尚撞色条纹宽松圆领T恤","imgtag":true,"pic":"http://s22.mogucdn.com/p1/160510/105880603_ie4dcmdbg4ydsmbxhazdambqgiyde_640x960.jpg_220x330.webp","price":"39.0","count":"1136","shelf":"三天前 上架"}
+  ]
+}
