@@ -1,17 +1,15 @@
 <template>
 
   <div class="ui-app">
-
-    <!--头部组件-->
-    <head-module></head-module>
-
     <!--左侧菜单组件-->
     <menuLeft :show="menu.show" :list="menu.list"></menuLeft>
     <!--遮罩层组件-->
     <mask :show="mask"></mask>
+
     <!--顶部页面组件-->
     <top-module></top-module>
-
+    <!--头部组件-->
+    <head-module></head-module>
     <!--内容页面组件-->
     <views-module></views-module>
 
