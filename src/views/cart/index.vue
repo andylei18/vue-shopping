@@ -12,7 +12,7 @@
         <div class="cart-panel">
 
           <!--购物车如果有数据则渲染回调数据列表-->
-          <div class="ui-panel" v-if="jsondata.data.shopGroup.length>0"></div>
+          <div class="ui-panel" v-if="cartlist.length > 0"></div>
 
           <!--购物车如果没有数据则显示-->
           <div class="ui-empty" v-else>
