@@ -47,7 +47,10 @@
   	methods:{
   		getData(){
   			const self=this
-  			
+  			let success=(json)=>{
+  				const data=json.data
+  				self.$route.router.app.loading.show=false
+  			}
   		}
   	}
   }
