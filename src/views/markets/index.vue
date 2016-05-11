@@ -10,7 +10,7 @@
     <!--头部组件-->
     <head-module></head-module>
     <!--当前页面头部局部组件-->
-    <current-head-module></current-head-module>
+    <top :list="top"></top>
 </div>
 
 </template>
@@ -19,10 +19,10 @@
   import Cover from '../../components/cover.vue'//欢迎动画组件
   import Mask from '../../components/mask.vue'//遮罩层组件
   import Menuleft from '../../components/menuleft.vue'//左侧菜单组件
-  import CurrentHeadModule from '../../components/head.vue'//头部组件
+  import HeadModule from '../../components/head.vue'//头部组件
 
   //页面局部view
-  import ViewModule from '../markets/head.vue'
+  import Top from '../markets/top.vue'
 
   export default {
   	data (){
@@ -34,11 +34,12 @@
              menu:{
                show:false,
                list:[]
-             }
+             },
+             top:[]
           }
   	},
   	components:{
-  		Cover,Mask,Menuleft,HeadModule
+  		Cover,Mask,Menuleft,HeadModule,Top
   	},
   	route:{
   		data(transition){
@@ -54,7 +55,7 @@
   				self.loadding.show=false
   				if(data&&!data.code){
   					transition.next({
-  						a:data.a,
+  						top:data.top
 
   					})
   				}
@@ -62,7 +63,10 @@
   			let error=(json)=>{
   				alert("error")
   			}
-  			self.$http.get('../../src/mock/home.json', [data]).then(successCallback, errorCallback)
+  			let data={
+  				fuck:123
+  			}
+  			self.$http.get('../../src/mock/home.json', [data]).then(success, error)
   		}
   	}
   }
