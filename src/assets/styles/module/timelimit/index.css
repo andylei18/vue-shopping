@@ -225,11 +225,6 @@ div.header_nav {
     display: inline-block;
     margin-top: 11px
 }
-
-.with-header {
-    padding-top: 45px
-}
-
 .with-header .page_head_module,.with-header .fixed-top,.with-header .navi_fixed,.with-header nav.fixed,.with-header .nav-box.fixed {
     top: 45px!important
 }

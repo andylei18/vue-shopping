@@ -1,7 +1,1 @@
-{
-  "code":0,
-  "message":"获取数据成功!",
-  "data":{
-    "shopGroup":""
-  }
-}
+{"result":"","status":{"message":"","isLogin":true,"code":1001,"msg":""}}
