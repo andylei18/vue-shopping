@@ -38,6 +38,17 @@
   	},
   	components:{
   		Cover,Mask,Menuleft,HeadModule
+  	},
+  	route:{
+  		data(transition){
+			this.getData(transition)
+  		}
+  	}
+  	methods:{
+  		getData(){
+  			const self=this
+  			
+  		}
   	}
   }
 </script>
