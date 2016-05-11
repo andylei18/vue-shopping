@@ -90,13 +90,14 @@
     <!--遮罩层组件-->
     <mask :show="mask"></mask>
     <!--确认取消组件-->
-    <confirm :show.sync="confirm"></confirm>
+    <confirm :show.sync="confirm.show" :opencallback="confirm.opencallback" :text=""></confirm>
 
   </div>
 
 
 </template>
 <script>
+
   //加载公用小组件
   import Mask from '../../components/mask.vue'//遮罩层组件
   import Confirm from '../../components/confirm.vue'//确认取消组件
@@ -108,7 +109,11 @@
       data(){
         return{
           mask:false,
-          confirm:false,
+          confirm:{
+            show:false,
+            text:'',
+            opencallback:this.opencallback
+          },
           result:"",
           cartlist:[],
           total:{
@@ -130,21 +135,21 @@
         //请求列表全部数据
         getAjax(transition){
           const self = this
-          let successCallback =(json) => {
-            const jsondata = json.data
+          let successCallback =(response) => {
+            const json = response.data
             self.$route.router.app.loading = false
-            if(jsondata&&jsondata.status.code==1001){
+            if(json&&json.status.code==1001){
 
               //实时异步队列更新数据
               transition.next({
-                result:jsondata.result
+                result:json.result
                // cartlist:jsondata.data.shopGroup
               })
 
             }
           }
-          let errorCallback = (json) => {
-            //console.log(json)
+          let errorCallback = (response) => {
+            //console.log(response)
           }
           self.$http.get('../../src/mock/cart/list.json').then(successCallback, errorCallback)
         },
@@ -193,11 +198,29 @@
         //删除商品
         delGoodEvent(obj){
           this.mask = true
-          this.confirm = true
+          this.confirm.show = true
         },
         //结算按钮
         setEvent(){
 
+        },
+        //确定删除callback
+        opencallback(){
+           const self = this
+
+           let successCallback = (response) =>{
+              const json = response.data
+              if(json&&json.status.code==1001){
+                this.confirm.show = false
+                this.mask = false
+              }
+           }
+
+           const errorCallback = (response) =>{
+              console.log(response)
+           }
+
+           self.$http.get('../../src/mock/cart/list.json').then(successCallback, errorCallback)
         }
       }
   }
