@@ -53,7 +53,7 @@
                     <br>
                     <span class="price">{{good.sku.nowprice/100|currency ''}}</span>
                   </p>
-                  <a href="javascript:;" class="cart-goods-dustbin" @click="delGoodEvent"> <i class="icon icon-uniE803"></i> </a>
+                  <a href="javascript:;" class="cart-goods-dustbin" @click="delGoodEvent(good)"> <i class="icon icon-uniE803"></i> </a>
                   <input type="checkbox" class="ui-checkbox c-goods" @click="selected($event,good,panel)">
                   <div>
                   </div>
@@ -191,7 +191,7 @@
           }
         },
         //删除商品
-        delGoodEvent(){
+        delGoodEvent(obj){
           this.mask = true
           this.confirm = true
         },
