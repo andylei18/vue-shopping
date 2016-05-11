@@ -5,7 +5,7 @@
       <i class="icon-back"></i>
     </a>
     <p class="title">购物车</p>
-    <span class="badge icon-uniE810"></span>
+    <span class="badge icon-uniE810" v-link="{name:'cart'}"></span>
   </header>
 
 </template>

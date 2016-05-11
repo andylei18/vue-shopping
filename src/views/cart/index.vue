@@ -1,3 +1,4 @@
+<style src="../../../src/assets/styles/module/cart/cart.css"></style>
 <template>
 
   <div class="ui-app">
@@ -9,7 +10,12 @@
 
       <section class="cart ui-form">
         <div class="cart-panel">
-          <div class="ui-empty">
+
+          <!--购物车如果有数据则渲染回调数据列表-->
+          <div class="ui-panel" v-if="jsondata.data.shopGroup.length>0"></div>
+
+          <!--购物车如果没有数据则显示-->
+          <div class="ui-empty" v-else>
             <p class="ui-empty-icon"><i class="icon icon-uniE810"></i></p>
             <p class="ui-empty-text">购物车还是空的哦～</p>
             <p class="ui-empty-btn">
@@ -34,55 +40,44 @@
   import HeadModule from '../../views/cart/head.vue'//头部组件
 
   export default {
-    data(){
-    return{
-      mask:false,
-      menu:{
-        show:false,
-        list:[]
-      },
-      goodsdata:""
-    }
-  },
-  components: {
-    HeadModule
-  },
-  route: {
-    data(transition){
-      const  _self = this
-
+      data(){
+      return{
+        mask:false,
+        cartlist:[]
+      }
+    },
+    components: {
+      HeadModule
+    },
+    route: {
+      data(transition){
+        const self = this
+        //请求列表全部数据
+        self.getAjax(transition)
+      }
+    },
+    methods: {
       //请求列表全部数据
-      _self.getAjax(transition)
+      getAjax(transition){
+        const self = this
+        const mt = transition.to.params.mt
+        let successCallback =(json) => {
+          const jsondata = json.data
+          self.$route.router.app.loading = false
+          if(jsondata&&jsondata.code==0){
+            //实时异步队列更新数据
+            transition.next({
+              cartlist:jsondata.data.shopGroup
+            })
 
-    }
-  },
-  methods: {
-    //请求列表全部数据
-    getAjax(transition){
-      const _self = this
-      const _mt = transition.to.params.mt
 
-      let successCallback =(json) => {
-        const jsondata = json.data
-
-        _self.$route.router.app.loading = false
-
-        /*if(jsondata&&jsondata.code==0){
-          //实时异步队列更新数据
-          transition.next({
-            goodsdata:jsondata.data
-          })
-        }*/
-
+          }
+        }
+        let errorCallback = (json) => {
+          //console.log(json)
+        }
+        self.$http.get('../../src/mock/cart/none.json').then(successCallback, errorCallback)
       }
-
-      let errorCallback = (json)=> {
-        //console.log(json)
-      }
-
-      _self.$http.get('../../src/mock/goods/goodslist.json?mt='+ _mt).then(successCallback, errorCallback)
-
     }
-  }
   }
 </script>

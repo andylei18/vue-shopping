@@ -47,44 +47,31 @@
     },
     route: {
       data(transition){
-        const  _self = this
-
+        const self = this
         //请求列表全部数据
-        _self.getAjax(transition)
-
-        document.addEventListener("click",function(e){
-          //关闭加入购物车
-          _self.menu.show = false;
-          _self.mask = false;
-        })
+        self.getAjax(transition)
       }
     },
     methods: {
       //请求列表全部数据
       getAjax(transition){
-        const _self = this
-        const _mt = transition.to.params.mt
-
+        const self = this
+        const mt = transition.to.params.mt
         let successCallback =(json) => {
           const jsondata = json.data
-
-          _self.$route.router.app.loading = false
-
+          self.$route.router.app.loading = false
           if(jsondata&&jsondata.code==0){
             //实时异步队列更新数据
             transition.next({
-              goodsdata:jsondata.data
+                goodsdata:jsondata.data
             })
           }
 
         }
-
         let errorCallback = (json)=> {
           //console.log(json)
         }
-
-        _self.$http.get('../../src/mock/goods/goodslist.json?mt='+ _mt).then(successCallback, errorCallback)
-
+        self.$http.get('../../src/mock/goods/goodslist.json?mt='+ mt).then(successCallback, errorCallback)
       }
     }
   }
