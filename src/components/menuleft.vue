@@ -127,12 +127,19 @@
 
   export default {
     props: ["show","list"],
+    ready () {
+      const self = this
+      document.addEventListener("click",function(e){
+        //关闭左侧菜单和遮罩层
+        self.$parent.menu.show = false;
+        self.$parent.mask = false;
+      })
+
+    },
     methods:{
       //关闭菜单
       closeMenuEvent(){
-
         this.$parent.menu.show = false
-
         this.$parent.mask = false
       }
     }

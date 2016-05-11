@@ -52,19 +52,11 @@
       },
       route: {
         data (transition) {
-          const _self = this
-
+          const self = this
           //请求列表全部数据
-          _self.getAjax(transition)
-
-          document.addEventListener("click",function(e){
-            //关闭加入购物车
-            _self.menu.show = false;
-            _self.mask = false;
-          });
-
+          self.getAjax(transition)
           //滚动加载
-          //_self.scrollList();
+          //self.scrollList();
         },
         deactivate (transition) {
           //$(window).off('scroll');
@@ -74,44 +66,34 @@
       methods: {
         //请求列表全部数据
         getAjax(transition){
-          const _self = this
-
+          const self = this
           let successCallback =(json) => {
             const jsondata = json.data
-            _self.$route.router.app.loading = false
-            _self.loadding.show = false
-
+            self.$route.router.app.loading = false
+            self.loadding.show = false
             if(jsondata&&jsondata.code==0){
-
               //实时异步队列更新数据
               transition.next({
-                loginpic:jsondata.data.advertisement,
-                marketslist:jsondata.data.markets,
-                goodslist:jsondata.data.goods,
-                menu:{
-                  show:false,
-                  list:jsondata.data.goods
-                },
-
+                  loginpic:jsondata.data.advertisement,
+                  marketslist:jsondata.data.markets,
+                  goodslist:jsondata.data.goods,
+                  menu:{
+                    show:false,
+                    list:jsondata.data.goods
+                  },
               })
             }
-
-
           }
-
           let errorCallback = (json)=> {
             //console.log(json)
           }
-
           let data = {
               id:'001'
           }
-
           let options ={
               name:'lei'
           }
-
-          _self.$http.get('../../src/mock/home.json', [data]).then(successCallback, errorCallback)
+          self.$http.get('../../src/mock/home.json', [data]).then(successCallback, errorCallback)
 
         }
       }

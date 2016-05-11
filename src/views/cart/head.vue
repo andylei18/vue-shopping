@@ -1,0 +1,11 @@
+<template>
+
+  <header class="ui-head-bar">
+    <a class="arr" href="javascript:void(history.back());">
+      <i class="icon-back"></i>
+    </a>
+    <p class="title">购物车</p>
+    <span class="badge icon-uniE810"></span>
+  </header>
+
+</template>
