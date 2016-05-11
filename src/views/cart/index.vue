@@ -8,7 +8,7 @@
 
     <div id="views">
 
-      <section class="cart ui-form">
+      <section class="cart ui-form" @click.stop>
         <div class="cart-panel">
 
           <!--购物车如果没有数据则显示-->
@@ -21,38 +21,40 @@
           </div>
 
           <!--购物车如果有数据则渲染回调数据列表-->
-          <div class="ui-panel" v-else>
+          <div class="ui-panel" v-else v-for="panel in result.shopGroup">
 
+            <!--标题-->
             <h3 class="ui-panel-hd">
-              <input type="checkbox" class="ui-checkbox c-shop" id="c-s-1obo4o">
-              <label for="c-s-1obo4o">卡优尔</label>
-              <img src="http://s17.mogucdn.com/p1/150923/upload_ieztomzrmeydmmlegmzdambqgyyde_147x23.png" class="shopRalatedTag">
+              <input type="checkbox" class="ui-checkbox c-shop" id="c-s-{{panel.shopInfo.shopIdEsc}}">
+              <label for="c-s-{{panel.shopInfo.shopIdEsc}}">{{panel.shopInfo.shopName}}</label>
+              <img data-type="{{panel.shopRelatedTagBlock.globleCouponTag.type}}" :src="panel.shopRelatedTagBlock.globleCouponTag.image" class="shopRalatedTag">
             </h3>
+
             <div class="ui-panel-bd">
               <ul class="ui-list cart-goods">
 
-                <li class="ui-list-item " data-unit="3430" data-save="1470" data-stockid="15s7rxg" data-min="1" data-max="5124">
+                <li class="ui-list-item " v-for="good in panel.cartItemGroup" data-unit="{{good.sku.nowprice}}" data-save="{{good.disCountFee}}" data-stockid="{{good.sku.stockIdEsc}}" data-min="{{good.number}}" data-max="{{good.sku.stock}}">
                   <a href="http://m.mogujie.com/x6/detail/18ga7x6?ptp_from=m1.PgEo7els._book_shopping_50216_h5-wall-v1_noab-noab_wall_docs.22.TRUVK" class="cart-goods-pic">
-                    <img class="fadeIn" src="http://s18.mogucdn.com/p1/160303/1lqbzf_ie3tkztcmi3wemjrg4zdambqgayde_640x960.jpg_100x100.jpg">
+                    <img class="fadeIn" :src="good.sku.imgUrl">
                   </a>
                   <div class="cart-goods-des">
-                    <h5 class="cart-goods-name">【夏季薄款】韩版休闲高腰显瘦铅笔小脚裤女黑色</h5>
+                    <h5 class="cart-goods-name">{{good.sku.title}}</h5>
                     <p class="cart-goods-sku">  颜色：黑色；  尺码：L；  </p>
                     <div class="cart-goods-counter">
-                      <a href="javascript:;" class="btn-sub ">
+                      <a href="javascript:;" class="btn-sub" @click="calculation(0,good)">
                         <i class="icon icon-uniE808"></i>
                       </a>
-                      <em class="cart-goods-num">3</em>
-                      <a href="javascript:;" class="btn-add "><i class="icon icon-uniE807"></i></a>
+                      <input type="text" class="cart-goods-num" v-model="good.number"readyonly :value="good.number"/>
+                      <a href="javascript:;" class="btn-add " @click="calculation(1,good,panel)"><i class="icon icon-uniE807"></i></a>
                     </div>
                   </div>
                   <p class="cart-goods-price">
-                    <span class="price-origin">49.00</span>
+                    <span class="price-origin">{{good.sku.price/100|currency ''}}</span>
                     <br>
-                    <span class="price">34.30</span>
+                    <span class="price">{{good.sku.nowprice/100|currency ''}}</span>
                   </p>
-                  <a href="javascript:;" class="cart-goods-dustbin"> <i class="icon icon-uniE803"></i> </a>
-                  <input type="checkbox" class="ui-checkbox c-goods">
+                  <a href="javascript:;" class="cart-goods-dustbin" @click="delGoodEvent"> <i class="icon icon-uniE803"></i> </a>
+                  <input type="checkbox" class="ui-checkbox c-goods" @click="selected($event,good,panel)">
                   <div>
                   </div>
                 </li>
@@ -75,9 +77,9 @@
           <div class="cart-counter">
             <p class="total-price">
               总计 :
-              <em class="sum">￥0.00</em>
+              <em class="sum">￥{{total.nowprice/100|currency ''}}</em>
             </p>
-            <p class="total-save">为您节省<span class="save">￥0.00</span></p>
+            <p class="total-save">为您节省<span class="save">￥{{total.price/100|currency ''}}</span></p>
           </div>
           <a href="javascript:;" class="ui-btn ui-btn-pink" @click="setEvent">去结算</a>
         </div>
@@ -85,7 +87,10 @@
       </section>
 
     </div>
-
+    <!--遮罩层组件-->
+    <mask :show="mask"></mask>
+    <!--确认取消组件-->
+    <confirm :show.sync="confirm"></confirm>
 
   </div>
 
@@ -94,53 +99,106 @@
 <script>
   //加载公用小组件
   import Mask from '../../components/mask.vue'//遮罩层组件
+  import Confirm from '../../components/confirm.vue'//确认取消组件
 
   //加载局部业务组件
   import HeadModule from '../../views/cart/head.vue'//头部组件
 
   export default {
       data(){
-      return{
-        mask:false,
-        result:"",
-        cartlist:[]
-      }
-    },
-    components: {
-      HeadModule
-    },
-    route: {
-      data(transition){
-        //请求列表全部数据
-        this.getAjax(transition)
-      }
-    },
-    methods: {
-      //请求列表全部数据
-      getAjax(transition){
-        const self = this
-        let successCallback =(json) => {
-          const jsondata = json.data
-          self.$route.router.app.loading = false
-          if(jsondata&&jsondata.status.code==1001){
-
-            //实时异步队列更新数据
-            transition.next({
-              result:jsondata.result
-             // cartlist:jsondata.data.shopGroup
-            })
-
+        return{
+          mask:false,
+          confirm:false,
+          result:"",
+          cartlist:[],
+          total:{
+            price:0,
+            nowprice:0
           }
         }
-        let errorCallback = (json) => {
-          //console.log(json)
-        }
-        self.$http.get('../../src/mock/cart/list.json').then(successCallback, errorCallback)
       },
-      //结算按钮
-      setEvent(){
+      components: {
+        HeadModule,Mask,Confirm
+      },
+      route: {
+        data(transition){
+          //请求列表全部数据
+          this.getAjax(transition)
+        }
+      },
+      methods: {
+        //请求列表全部数据
+        getAjax(transition){
+          const self = this
+          let successCallback =(json) => {
+            const jsondata = json.data
+            self.$route.router.app.loading = false
+            if(jsondata&&jsondata.status.code==1001){
 
+              //实时异步队列更新数据
+              transition.next({
+                result:jsondata.result
+               // cartlist:jsondata.data.shopGroup
+              })
+
+            }
+          }
+          let errorCallback = (json) => {
+            //console.log(json)
+          }
+          self.$http.get('../../src/mock/cart/list.json').then(successCallback, errorCallback)
+        },
+        //计算商品数量
+        calculation(type,obj){
+           const self = this
+           const stock = obj.sku.stock //当前商品的库存
+
+           // 0表示是递减商品
+           if(type == 0){
+             if(obj.number <= stock && obj.number > 1){
+               obj.number = parseInt(obj.number) - 1
+             }
+           }
+           // 1表示是递增商品
+           else{
+             if(obj.number < stock){
+               obj.number = parseInt(obj.number) + 1
+             }
+           }
+        },
+        //选中当前商品
+        selected(e,obj,parent){
+          const self = this
+          let isEheck = e.target.checked
+
+          //多件商品的总价 = 多件商品的总价 + (单件商品的单价 * 选择的商品数量)
+          if(isEheck){
+            obj.ck = true
+            self.total.price = parseInt(self.total.price) + parseInt(obj.sku.price * obj.number)
+            self.total.nowprice = parseInt(self.total.nowprice) + parseInt(obj.sku.nowprice * obj.number)
+          }
+          //多件商品的总价 = 多件商品的总价 - (单件商品的单价 * 选择的商品数量)
+          else{
+            obj.ck = false
+            self.total.price = parseInt(self.total.price)  - parseInt(obj.sku.price * obj.number)
+            self.total.nowprice = parseInt(self.total.nowprice) - parseInt(obj.sku.nowprice * obj.number)
+          }
+
+          //判断是否多选
+          //const parentNum = parent.cartItemGroup.length
+          for(let i in parent.cartItemGroup){
+            console.log(parent.cartItemGroup[i].ck)
+          }
+        },
+        //删除商品
+        delGoodEvent(){
+          this.mask = true
+          this.confirm = true
+        },
+        //结算按钮
+        setEvent(){
+
+        }
       }
-    }
   }
 </script>
