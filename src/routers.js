@@ -60,6 +60,11 @@ module.exports = function(router){
 
 
 
+        //个人中心模块  入口页面
+        '/usercenter':{
+          name:'usercenter',
+            component: require('./views/usercenter/index.vue')
+        },
         //购物车模块页面  入口页面
         '/cart':{
           name:'cart',
