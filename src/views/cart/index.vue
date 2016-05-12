@@ -61,12 +61,7 @@
 
               </ul>
             </div>
-
-
           </div>
-
-
-
         </div>
 
         <div class="cart-checkout" v-if="result.length !=''">
@@ -90,7 +85,7 @@
     <!--遮罩层组件-->
     <mask :show="mask"></mask>
     <!--确认取消组件-->
-    <confirm :show.sync="confirm.show" :opencallback="confirm.opencallback" :text=""></confirm>
+    <confirm :confirm="confirm"></confirm>
 
   </div>
 
@@ -106,13 +101,14 @@
   import HeadModule from '../../views/cart/head.vue'//头部组件
 
   export default {
-      data(){
-        return{
+      data () {
+        return {
           mask:false,
           confirm:{
             show:false,
             text:'',
-            opencallback:this.opencallback
+            confirm () {},
+            cancel () {}
           },
           result:"",
           cartlist:[],
@@ -132,6 +128,12 @@
         }
       },
       methods: {
+        createConfirm (text, confirm, cancel) {
+          this.confirm.show = true
+          this.confirm.text = text
+          this.confirm.confirm = confirm
+          this.confirm.cancel = cancel
+        },
         //请求列表全部数据
         getAjax(transition){
           const self = this
@@ -197,8 +199,7 @@
         },
         //删除商品
         delGoodEvent(obj){
-          this.mask = true
-          this.confirm.show = true
+          this.createConfirm('确定要删除这个商品吗', this.opencallback)
         },
         //结算按钮
         setEvent(){
