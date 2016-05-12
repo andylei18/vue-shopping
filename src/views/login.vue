@@ -181,61 +181,6 @@
     display: block;
     width: 100%;
   }
-  /*图片验证码*/
-  /*.form_check {
-    background: #f2f2f2;
-    padding: 0.48rem 0.6rem;
-    margin-bottom: 0.56rem;
-  }
-  .form_check .check_notice {
-    font-size: 0.64rem;
-    color: #aeaeae;
-  }
-  .form_check .check_notice a {
-    font-size: 0.64rem;
-    color: #aeaeae;
-    margin-left: 0.6rem;
-    text-decoration: underline;
-  }
-  .form_check .check_img {
-    height: 2.88rem;
-    margin-left: -0.32rem;
-    padding-top: 0.2rem;
-    -webkit-user-select: none;
-  }
-  .form_check .check_img .img_div {
-    float: left;
-    width: 2.68rem;
-    height: 2.68rem;
-    margin-left: 0.32rem;
-    box-shadow: 0 0 2px rgba(219, 219, 219, 0.8);
-    background-color: #fff;
-    -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-  }
-  .form_check .check_img .img_div span {
-    margin: 0.08rem;
-    display: block;
-    width: 2.52rem;
-    height: 2.52rem;
-    content: '';
-    background-size: 12.8rem auto;
-  }
-  .form_check .check_img .f0 {
-    background-position: 0 0;
-  }
-  .form_check .check_img .f1 {
-    background-position: -3.2rem 0;
-  }
-  .form_check .check_img .f2 {
-    background-position: -6.4rem 0;
-  }
-  .form_check .check_img .f3 {
-    background-position: -9.6rem 0;
-  }
-  .mb15 {
-    margin-bottom: 0.6rem;
-  }*/
   /*全球登录*/
   .login_idea {
     color: #494949;
