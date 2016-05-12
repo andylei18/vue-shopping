@@ -9,8 +9,16 @@
     <menuLeft :show="menu.show" :list="menu.list"></menuLeft>
     <!--头部组件-->
     <head-module></head-module>
-    <!--当前页面头部局部组件-->
-    <top :list="top"></top>
+
+    <div id="views">
+    	<div class="{{realTime}}">
+    		<div></div>
+    	</div>
+    	<div class="favor">
+		    <!--当前页面头部局部组件-->
+		    <top :list="top"></top>
+    	</div>
+    </div>
 </div>
 
 </template>
@@ -37,6 +45,12 @@
              },
              top:[]
           }
+  	},
+  	computed:{
+  		realTime(){
+  			var time=new Date().getTime()
+  			return "page"+time
+  		}
   	},
   	components:{
   		Cover,Mask,Menuleft,HeadModule,Top
