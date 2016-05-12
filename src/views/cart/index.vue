@@ -41,11 +41,11 @@
                     <h5 class="cart-goods-name">{{good.sku.title}}</h5>
                     <p class="cart-goods-sku">  颜色：黑色；  尺码：L；  </p>
                     <div class="cart-goods-counter">
-                      <a class="btn-sub" @click="calculation(0, good)">
+                      <a class="btn-sub" @click="calcitemNum(-1, good)">
                         <i class="icon icon-uniE808"></i>
                       </a>
-                      <input type="text" class="cart-goods-num" v-model="good.number"readyonly :value="good.number"/>
-                      <a href="javascript:;" class="btn-add " @click="calculation(1,good,panel)"><i class="icon icon-uniE807"></i></a>
+                      <input type="text" class="cart-goods-num" v-model="good.number" readyonly/>
+                      <a href="javascript:;" class="btn-add " @click="calcitemNum(1, good)"><i class="icon icon-uniE807"></i></a>
                     </div>
                   </div>
                   <p class="cart-goods-price">
@@ -198,6 +198,9 @@
               item['selected'] = this.selecteAllState
             })
           })
+        },
+        calcitemNum (step, item) {
+          item.number += Math.floor(step)
         },
         //请求列表全部数据
         getAjax (transition) {
