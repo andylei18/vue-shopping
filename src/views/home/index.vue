@@ -15,7 +15,8 @@
     <login-module :loginpic="loginpic"></login-module>
     <!--中心数据组件-->
     <views-module :goods="goodslist" :markets="marketslist"></views-module>
-
+    <!--广告组件-->
+    <down-module></down-module>
   </div>
 </template>
 
@@ -29,6 +30,7 @@
 
 
   //加载局部业务组件
+  import DownModule from '../../views/home/down.vue'//广告组件
   import LoginModule from '../../views/home/login.vue'//首页登陆
   import ViewsModule from '../../views/home/views.vue'//中心数据组件
 
@@ -49,7 +51,7 @@
           }
       },
       components: {
-         Cover,Mask,Menuleft,HeadModule,LoginModule,ViewsModule
+         Cover,Mask,Menuleft,HeadModule,LoginModule,ViewsModule,DownModule
       },
       route: {
         data (transition) {
