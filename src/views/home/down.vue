@@ -86,7 +86,7 @@
 
 <template>
 
-  <div class="ui-hada">
+  <div class="ui-hada" v-if="show">
     <div class="ui-hada-logo"></div>
     <div class="ui-hada-intro">
       <p class="ui-hada-desc">更多变美妙招一学就会</p>
@@ -102,9 +102,26 @@
       </p>
     </div>
     <span class="btn ui-hada-btn">立即下载</span>
-    <a href="javascript:;" class="ui-hada-close">
+    <a class="ui-hada-close" @click="hide">
       <i class="icon icon-uniE800"></i>
     </a>
   </div>
 
 </template>
+
+<script>
+
+export default {
+  data () {
+    return {
+      show: true
+    }
+  },
+  methods: {
+    hide () {
+      this.show = false
+    }
+  }
+}
+
+</script>
