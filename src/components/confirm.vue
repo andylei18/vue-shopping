@@ -36,13 +36,17 @@
       }
     },
     ready () {
-      document.addEventListener("click",e => {
-        //关闭弹出窗和遮罩层
-        this.show = false
-        this.$parent.mask = false
-      })
+      document.addEventListener('click', this.maskClose)
+    },
+    destroy () {
+      document.removeEventListener('click', this.maskClose)
     },
     methods:{
+      maskClose () {
+        //关闭弹出窗和遮罩层
+        this.confirm.show = false
+        this.$parent.mask = false
+      },
       cancelEvent () {
         this.confirm.show = false
         if (this.confirm.cancel) this.confirm.cancel()
