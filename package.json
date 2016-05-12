@@ -32,7 +32,6 @@
     "ora": "^0.2.0",
     "shelljs": "^0.6.0",
     "url-loader": "^0.5.7",
-
     "vue-resource": "^0.7.0",
     "vue-router": "^0.7.13",
     "vue-hot-reload-api": "^1.2.0",
@@ -41,8 +40,6 @@
     "vue-style-loader": "^1.0.0",
     "vue-toast-mobile": "^0.0.6",
     "vue-swipe":"^0.2.0",
-
-
     "webpack": "^1.12.2",
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
