@@ -53,8 +53,8 @@
                     <br>
                     <span class="price">{{good.sku.nowprice/100|currency ''}}</span>
                   </p>
-                  <a href="javascript:;" class="cart-goods-dustbin" @click="delGoodEvent(good)"> <i class="icon icon-uniE803"></i> </a>
-                  <input type="checkbox" class="ui-checkbox c-goods" v-model="good.selected" @click="selecteItem(good, panel)">
+                  <a class="cart-goods-dustbin" @click="delGoodEvent(good, panel.cartItemGroup)"> <i class="icon icon-uniE803"></i> </a>
+                  <input type="checkbox" class="ui-checkbox c-goods" v-model="good.selected" @click="selecteItem(good)">
                   <div>
                   </div>
                 </li>
@@ -229,25 +229,26 @@
           })
         },
         //删除商品
-        delGoodEvent(obj){
-          this.createConfirm('确定要删除这个商品吗', this.opencallback)
+        delGoodEvent (item, shop) {
+          let obj = {
+            item: item,
+            shop: shop
+          }
+          const delFromCart = () => {
+           this.$http.get('../../src/mock/cart/list.json')
+            .then(response => {
+              obj.shop.$remove(obj.item)
+            })
+            .catch(response => {
+              console.log(response)
+            })
+          }
+          
+          this.createConfirm('确定要删除这个商品吗', delFromCart.bind(obj))
         },
         //结算按钮
         setEvent(){
 
-        },
-        //确定删除callback
-        opencallback(){
-           this.$http.get('../../src/mock/cart/list.json')
-            .then(response => {
-              const json = response.data
-              if(json&&json.status.code==1001){
-                this.closeConfirm()
-              }
-           })
-            .catch(response => {
-              console.log(response)
-           })
         }
       }
   }
