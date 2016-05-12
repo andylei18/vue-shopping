@@ -70,7 +70,6 @@
   				if(data&&!data.code){
   					transition.next({
   						top:data.top
-
   					})
   				}
   			}
