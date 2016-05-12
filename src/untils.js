@@ -1,5 +1,3 @@
-'use strict'
-
 /**
  *   对Date的扩展，将 Date 转化为指定格式的String 
  *   月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q) 可以用 1-2 个占位符， 
@@ -8,7 +6,7 @@
  *   (new Date()).Format("yyyy-MM-dd hh:mm:ss.S") ==> 2006-07-02 08:09:04.423
  *   (new Date()).Format("yyyy-M-d h:m:s.S")      ==> 2006-7-2 8:9:4.18 
  */
-const fmtDate = function(date, fmt) { //author: meizz 
+const fmtDate = (date, fmt) => { //author: meizz 
     var o = {
         "M+": date.getMonth() + 1, //月份 
         "d+": date.getDate(), //日 
@@ -27,8 +25,6 @@ const fmtDate = function(date, fmt) { //author: meizz
 }
 
 
-const errorCallback=(response)=>{
-    
+const errorCallback = (response) => {
     return alert(123123123)
-
 }
