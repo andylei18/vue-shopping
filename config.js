@@ -5,8 +5,9 @@ module.exports = {
   build: {
     index: path.resolve(__dirname, 'dist/index.html'),
     assetsRoot: path.resolve(__dirname, 'dist'),
-    assetsSubDirectory: 'dist',
+    assetsSubDirectory: 'src',
     assetsPublicPath: '/',
+    //assetsPublicPath: 'http://andylei18.github.io/vue-shopping/',
     //assetsPublicPath: 'http://localhost:63342/dist/',
     productionSourceMap: true
   },

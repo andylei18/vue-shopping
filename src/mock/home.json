@@ -2,19 +2,19 @@
   "code":0,
   "message":"请求成功!",
   "data":{
-    "advertisement":"../../../../src/assets/images/home/advertisement.jpg",
+    "advertisement":"http://s7.mogucdn.com/p1/160426/t0_ifqwgm3dgfrggnzshazdambqgyyde_750x750.gif",
     "markets":[
-      {"title":"心水好货","mt":"10.932.r62904","pic":"../../../../src/assets/images/markets/list/xihu.jpg","desc":"新款春装上阵"},
-      {"title":"运动","mt":"10.932.r62906","pic":"../../../../src/assets/images/markets/list/dama.jpg","desc":"轻松购出好身材"},
-      {"title":"设计师","mt":"10.932.r62907","pic":"../../../../src/assets/images/markets/list/likeme.jpg","desc":"设计师新款来袭"},
-      {"title":"充值","mt":"10.932.r62910","pic":"../../../../src/assets/images/markets/list/trade.png","desc":"话费全国通用"}
+      {"title":"心水好货","mt":"10.932.r62904","pic":"http://s16.mogucdn.com/p1/151105/upload_ie4wenjumvqwkzdbgqzdimbqgqyde_200x200.jpg","desc":"新款春装上阵"},
+      {"title":"运动","mt":"10.932.r62906","pic":"http://s16.mogucdn.com/p1/150923/upload_ieztkzjzgvrtsmlegmzdambqgyyde_200x200.jpg","desc":"轻松购出好身材"},
+      {"title":"设计师","mt":"10.932.r62907","pic":"http://s17.mogucdn.com/p1/150923/upload_ieytqmzzgrrtsmlegmzdambqmeyde_200x200.jpg","desc":"设计师新款来袭"},
+      {"title":"充值","mt":"10.932.r62910","pic":"http://s7.mogucdn.com/p1/160125/fm_ie4wkyrrhezdkzrugyzdambqgqyde_200x200.png","desc":"话费全国通用"}
     ],
     "goods":[
-      {"title":"上衣","mt":"10.933.r59313","type":"jacket","pic":"../../../../src/assets/images/goods/list/jacket.png","desc":"底价新品壁咚"},
-      {"title":"裤子","mt":"10.933.r59165","type":"trousers","pic":"../../../../src/assets/images/goods/list/trousers.jpg","desc":"春季最热卖"},
-      {"title":"裙子","mt":"10.933.r63562","type":"skirt","pic":"../../../../src/assets/images/goods/list/skirt.jpg","desc":"焕新你的衣橱"},
-      {"title":"内衣","mt":"10.933.r59524","type":"underwear","pic":"../../../../src/assets/images/goods/list/underwear.jpg","desc":"焕新由内而外"},
-      {"title":"女鞋","mt":"10.933.r59004","type":"shoes","pic":"../../../../src/assets/images/goods/list/shoes.png","desc":"好鞋不将“旧”"}
+      {"title":"上衣","mt":"10.933.r59313","type":"jacket","pic":"http://s18.mogucdn.com/p1/160304/upload_ifrwemrrgi4donzrg4zdambqhayde_120x120.png","desc":"底价新品壁咚"},
+      {"title":"裤子","mt":"10.933.r59165","type":"trousers","pic":"http://s16.mogucdn.com/p1/160301/upload_ifrdonddgnswgnzqg4zdambqmeyde_120x120.jpg","desc":"春季最热卖"},
+      {"title":"裙子","mt":"10.933.r63562","type":"skirt","pic":"http://s8.mogucdn.com/p1/160229/er_ie4tambxmq2wkmzqg4zdambqgqyde_120x120.jpg","desc":"焕新你的衣橱"},
+      {"title":"内衣","mt":"10.933.r59524","type":"underwear","pic":"http://s8.mogucdn.com/p1/160215/7m_ifrdkyrvhaztgylcgyzdambqmeyde_120x120.jpg","desc":"焕新由内而外"},
+      {"title":"女鞋","mt":"10.933.r59004","type":"shoes","pic":"http://s8.mogucdn.com/p1/160320/in_ifrdaojyg5rdsyrwg4zdambqmeyde_120x120.png","desc":"好鞋不将“旧”"}
     ]
   }
 }

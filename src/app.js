@@ -10,7 +10,7 @@ Vue.use(VueRouter)
 Vue.use(VueResource)
 
 //配置前端请求路径
-const configPath = '/dist/mock/'
+const configPath = '/src/mock/'
 window. configPath = configPath
 
 Vue.http.options.headers = {
