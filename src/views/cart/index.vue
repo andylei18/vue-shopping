@@ -204,7 +204,7 @@
         },
         //请求列表全部数据
         getAjax (transition) {
-          this.$http.get('../../src/mock/cart/list.json')
+          this.$http.get(configPath + 'cart/list.json')
           .then(response => {
             let json = response.data
             this.$route.router.app.loading = false
@@ -231,7 +231,7 @@
         //删除商品
         delGoodEvent (item, shop) {
           this.createConfirm('确定要删除这个商品吗', () => {
-           this.$http.get('../../src/mock/cart/list.json')
+           this.$http.get(configPath + 'cart/list.json')
             .then(response => {
               shop.$remove(item)
             })

@@ -71,7 +71,7 @@
         let errorCallback = (json)=> {
           //console.log(json)
         }
-        self.$http.get('../../src/mock/goods/goodslist.json?mt='+ mt).then(successCallback, errorCallback)
+        self.$http.get(configPath + 'goods/goodslist.json?mt='+ mt).then(successCallback, errorCallback)
       }
     }
   }

@@ -109,7 +109,7 @@
           let options ={
               name:'lei'
           }
-          self.$http.get('../../src/mock/home.json', [data]).then(successCallback, errorCallback)
+          self.$http.get(configPath + 'home.json', [data]).then(successCallback, errorCallback)
 
         }
       }

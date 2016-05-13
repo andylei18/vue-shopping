@@ -38,7 +38,11 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'url',
+        query: {
+          limit: 10000,
+          name: utils.assetsPath('mock/[name].[hash:7].[ext]')
+        }
       },
       {
         test: /\.html$/,

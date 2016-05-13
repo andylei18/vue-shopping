@@ -21,7 +21,7 @@
                   </div>
                   <div class="img-detail">
                     <div class="lazyV2" style="padding:50% 0">
-                      <img src="http://s18.mogucdn.com/p1/160506/upload_ifqtszldmmzdczjvhazdambqgyyde_315x315.png" '="">
+                      <img src="http://s18.mogucdn.com/p1/160506/upload_ifqtszldmmzdczjvhazdambqgyyde_315x315.png">
                     </div>
                   </div>
                   <div class="txt-wrap">
@@ -43,7 +43,7 @@
                     </div>
                   </div>
                   <div class="img-detail">
-                    <div class="lazyV2" style="padding:50% 0"><img src="http://s18.mogucdn.com/p1/160307/upload_ie4wgmdfmfqtaojsg4zdambqgqyde_315x315.jpg_999x999.v1c0.webp" '=""></div>
+                    <div class="lazyV2" style="padding:50% 0"><img src="http://s18.mogucdn.com/p1/160307/upload_ie4wgmdfmfqtaojsg4zdambqgqyde_315x315.jpg"></div>
                   </div>
                   <div class="txt-wrap">
                     <div class="title-word">创意生活</div>
@@ -68,7 +68,9 @@
                     </div>
                   </div>
                   <div class="img-detail">
-                    <div class="lazyV2" style="padding:50% 0"><img src="http://s17.mogucdn.com/p1/160506/upload_ifrggndfmezdczjvhazdambqmeyde_315x315.png" '=""></div>
+                    <div class="lazyV2" style="padding:50% 0">
+                      <img src="http://s17.mogucdn.com/p1/160506/upload_ifrggndfmezdczjvhazdambqmeyde_315x315.png">
+                    </div>
                   </div>
                   <div class="txt-wrap">
                     <div class="title-word">长不大的少女心</div>
@@ -89,7 +91,10 @@
                     </div>
                   </div>
                   <div class="img-detail">
-                    <div class="lazyV2" style="padding:50% 0"><img src="http://s17.mogucdn.com/p1/160325/upload_ie4gen3eguzdmnbyg4zdambqgiyde_315x315.png" '=""></div>                  </div>
+                    <div class="lazyV2" style="padding:50% 0">
+                      <img src="http://s17.mogucdn.com/p1/160325/upload_ie4gen3eguzdmnbyg4zdambqgiyde_315x315.png">
+                    </div>                 
+                  </div>
                   <div class="txt-wrap">
                     <div class="title-word">创意生活</div>
                     <div class="desc">生活里，总需要小创意～</div>

@@ -5,8 +5,9 @@ module.exports = {
   build: {
     index: path.resolve(__dirname, 'dist/index.html'),
     assetsRoot: path.resolve(__dirname, 'dist'),
-    assetsSubDirectory: 'src',
+    assetsSubDirectory: 'dist',
     assetsPublicPath: '/',
+    //assetsPublicPath: 'http://localhost:63342/dist/',
     productionSourceMap: true
   },
   dev: {

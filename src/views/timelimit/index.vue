@@ -65,7 +65,7 @@
           name:'lei'
         }
 
-        _self.$http.get('../../src/mock/home.json', [data]).then(successCallback, errorCallback)
+        _self.$http.get(configPath + 'home.json', [data]).then(successCallback, errorCallback)
 
       }
     }

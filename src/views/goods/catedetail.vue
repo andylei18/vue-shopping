@@ -182,7 +182,7 @@
         //console.log(json)
       }
 
-      _self.$http.get('../../src/mock/goods/catelist.json?mt='+ _mt).then(successCallback, errorCallback)
+      _self.$http.get(configPath + 'goods/catelist.json?mt='+ _mt).then(successCallback, errorCallback)
 
     }
   }

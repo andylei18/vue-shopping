@@ -79,7 +79,7 @@
   			let data={
   				fuck:123
   			}
-  			self.$http.get('../../src/mock/home.json', [data]).then(success, error)
+  			self.$http.get(configPath + 'home.json', [data]).then(success, error)
   		}
   	}
   }
