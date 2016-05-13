@@ -230,21 +230,15 @@
         },
         //删除商品
         delGoodEvent (item, shop) {
-          let obj = {
-            item: item,
-            shop: shop
-          }
-          const delFromCart = () => {
+          this.createConfirm('确定要删除这个商品吗', () => {
            this.$http.get('../../src/mock/cart/list.json')
             .then(response => {
-              obj.shop.$remove(obj.item)
+              shop.$remove(item)
             })
             .catch(response => {
               console.log(response)
             })
-          }
-          
-          this.createConfirm('确定要删除这个商品吗', delFromCart.bind(obj))
+          })
         },
         //结算按钮
         setEvent(){
