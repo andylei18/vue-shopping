@@ -20,7 +20,7 @@
   <ul class="suggest-list ctg-rcd">
 
     <li>
-      <a href="http://act.mogujie.com/h5goodswall?fcid=10055545&amp;sort=newtype&amp;searchTag=802&amp;mt=10.483.r53837">
+      <a v-link="{name:'catelist'}">
         <img class="fadeIn" src="http://s18.mogucdn.com/p1/160305/upload_ie3tqmtggazdoyrrg4zdambqgayde_330x460.png" alt="绑带衬衫">
         <!-- <span class="rcd-name"> <span class="t-up">绑带衬衫</span> <span class="line"></span> <span class="t-bot"></span> </span> -->
       </a>

@@ -3,8 +3,13 @@
 
   <div class="ui-app with-header">
 
-    <!--头部组件-->
-    <head-module></head-module>
+    <header class="ui-head-bar">
+      <a class="arr" href="javascript:void(history.back());">
+        <i class="icon-back"></i>
+      </a>
+      <p class="title">购物车</p>
+      <span class="badge icon-uniE810 badge-car" v-link="{name:'cart'}"></span>
+    </header>
 
     <div id="views">
 
@@ -97,9 +102,6 @@
   import Mask from '../../components/mask.vue'//遮罩层组件
   import Confirm from '../../components/confirm.vue'//确认取消组件
 
-  //加载局部业务组件
-  import HeadModule from '../../views/cart/head.vue'//头部组件
-
   export default {
       data () {
         return {
@@ -120,7 +122,7 @@
         }
       },
       components: {
-        HeadModule,Mask,Confirm
+        Mask,Confirm
       },
       computed: {
         totalPrice () {

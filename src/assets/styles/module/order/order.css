@@ -1,0 +1,596 @@
+#createOrder {
+    background: #f43c32
+}
+
+.orderPlace {
+    background: #f6f6f6
+}
+
+.orderPlace .icon-uniE809:before {
+    content: '\e80a'!important
+}
+
+.orderPlace .cp_press {
+    background-color: #f0f0f0
+}
+
+.orderPlace .icon-chevron-right {
+    border-color: #7e7e7e;
+    position: absolute;
+    top: 50%;
+    right: 14px
+}
+
+.orderPlace .contact .icon-chevron-right:before {
+    position: absolute;
+    top: -7px
+}
+
+.orderPlace .color_red {
+    color: #424242
+}
+
+.orderPlace .linethrough {
+    text-decoration: line-through
+}
+
+.orderPlace .contact {
+    position: relative;
+    background: #fff;
+    margin: 15px 0;
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1
+}
+
+.orderPlace .contact .contacter {
+    color: #424242;
+    font-size: 12px;
+    margin: 14px 14px 5px
+}
+
+.orderPlace .contact .address {
+    color: #727272;
+    margin: 14px;
+    font-size: 12px;
+    margin: 5px 14px 14px
+}
+
+.orderPlace .detail {
+    margin-bottom: 15px
+}
+
+.orderPlace .detail .detail_head {
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 8px;
+    display: -webkit-box;
+    display: box
+}
+
+.orderPlace .detail .detail_head .detail_head_title {
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    color: #424242;
+    font-size: 15px;
+    line-height: 33px
+}
+
+.orderPlace .detail .detail_head .detail_head_title img {
+    height: 14px
+}
+
+.orderPlace .detail .detail_head .detail_head_title .detail_shop_img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%
+}
+
+.orderPlace .detail .detail_head .detail_head_title .detail_shop_auth {
+    color: #f43c32;
+    font-size: 13px;
+    vertical-align: baseline;
+    line-height: 14px;
+    height: 15px;
+    display: inline-block
+}
+
+.orderPlace .detail .detail_head .detail_head_title .detail_shop_auth img {
+    vertical-align: top
+}
+
+.orderPlace .detail .detail_head .contact_seller {
+    color: #666;
+    line-height: 33px
+}
+
+.orderPlace .detail .detail_head .contact_seller:before {
+    color: #f43c32;
+    font-size: 21px;
+    display: inline-block;
+    float: left;
+    margin-right: 3px
+}
+
+.orderPlace .detail .detail_list {
+    padding: 0 14px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff
+}
+
+.orderPlace .detail .detail_list .detail_item {
+    padding: 14px 0;
+    display: -webkit-flex;
+    display: flex;
+    display: -webkit-box;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.orderPlace .detail .detail_list .detail_item:last-child {
+    border-bottom: 0
+}
+
+.orderPlace .detail .detail_list .detail_item .img img {
+    width: 50px;
+    height: 50px;
+    padding: 1px;
+    border: 1px solid #c8c8c8
+}
+
+.orderPlace .detail .detail_list .detail_item .msg {
+    width: 100%;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+    word-break: break-all;
+    padding: 0 10px;
+    font-size: 12px
+}
+
+.orderPlace .detail .detail_list .detail_item .msg .msg_title {
+    color: #424242
+}
+
+.orderPlace .detail .detail_list .detail_item .msg .msg_size {
+    color: #999
+}
+
+.orderPlace .detail .detail_list .detail_item .price {
+    font-size: 12px;
+    word-break: break-all;
+    text-align: right;
+    color: #999
+}
+
+.orderPlace .detail .detail_list .detail_item .price .price_now {
+    color: #424242
+}
+
+.orderPlace .detail .detail_list .detail_item .price .detail_num {
+    position: relative;
+    width: 80px;
+    height: 22px;
+    display: inline-block
+}
+
+.orderPlace .detail .detail_list .detail_item .price .detail_num_input {
+    position: absolute;
+    width: 28px;
+    height: 22px;
+    line-height: 22px;
+    border: 1px solid #ddd;
+    background: #fff;
+    top: 0;
+    right: 26px;
+    text-align: center;
+    color: #333;
+    border-radius: 0
+}
+
+.orderPlace .detail .detail_list .detail_item .price .detail_num_add {
+    position: absolute;
+    cursor: pointer;
+    width: 27px;
+    height: 22px;
+    top: 0;
+    right: 0;
+    border: 1px solid #ddd;
+    border-radius: 2px 0 0 2px;
+    background: #fff url(http://s18.mogucdn.com/p1/150826/upload_ieywmnzymyzdmmbugmzdambqmeyde_24x24.png) center no-repeat;
+    background-size: 50%
+}
+
+.orderPlace .detail .detail_list .detail_item .price .detail_num_reduce {
+    position: absolute;
+    cursor: pointer;
+    width: 27px;
+    height: 22px;
+    top: 0;
+    right: 53px;
+    background: #fff url(http://s17.mogucdn.com/p1/150826/upload_iezdgnrrgaztmmbugmzdambqmmyde_24x24.png) center no-repeat;
+    background-size: 50%;
+    border: 1px solid #ddd;
+    border-radius: 0 2px 2px 0
+}
+
+.orderPlace .detail .detail_list .detail_item .price .disable {
+    opacity: .5;
+    cursor: not-allowed
+}
+
+.orderPlace .detail .detail_list .detail_item .price .red_bag {
+    margin-top: 2px
+}
+
+.orderPlace .detail .detail_list .detail_item .price .red_bag span {
+    color: #f43c32
+}
+
+.orderPlace .detail .detail_msg {
+    background-color: #fff
+}
+
+.orderPlace .detail .detail_msg .freight,.orderPlace .detail .detail_msg .message,.orderPlace .detail .detail_msg .privilege_shop,.orderPlace .detail .detail_msg .total_price {
+    padding: 14px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.orderPlace .detail .detail_msg .message textarea {
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px
+}
+
+.orderPlace .privileged_all {
+    position: relative;
+    background-color: #fff;
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    margin-top: -1px
+}
+
+.orderPlace .privileged_all .privileged_msg {
+    line-height: 25px;
+    margin: 12px 14px;
+    width: 75%;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.orderPlace .privileged_all .privileged_icon {
+    top: 12px
+}
+
+.orderPlace .privileged_all .privileged_icon:before {
+    position: relative;
+    top: 3px
+}
+
+.orderPlace .refund {
+    background-color: #fefefe;
+    padding: 14px;
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    color: #09b6a9
+}
+
+.orderPlace .refund ul {
+    list-style: initial
+}
+
+.orderPlace .refund li {
+    float: left
+}
+
+.orderPlace .refund li:first-child {
+    margin-left: 15px
+}
+
+.orderPlace .refund li:last-child {
+    margin-left: 25px
+}
+
+.orderPlace .summation {
+    background-color: #fafafa;
+    line-height: 32px;
+    padding: 6px 14px;
+    margin-top: 15px
+}
+
+.orderPlace .summation .totalPay {
+    color: #f43c32
+}
+
+.orderPlace .summation .color_red {
+    color: #f43c32;
+    font-size: 20px;
+    vertical-align: bottom
+}
+
+.orderPlace .event_privilege {
+    background-color: #fefefe;
+    border-bottom: 1px solid #d1d1d1;
+    color: #ee4566
+}
+
+.orderPlace .event_privilege .event_text {
+    padding: 14px 10px 14px 35px;
+    background: url(http://s18.mogucdn.com/pic/150320/2r6z_iezdonlfgnsdqzbqgazdambqmmyde_33x33.png) 10px center no-repeat;
+    background-size: 22px
+}
+
+.orderPlace .event_privilege .event_img {
+    width: 100%
+}
+
+.orderPlace .modou_use,.orderPlace .pay_stage {
+    border-top: 1px solid #d1d1d1
+}
+
+.orderPlace .modou_use,.orderPlace .pay_stage,.orderPlace .presale {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 10px 14px;
+    margin-bottom: 15px
+}
+
+.orderPlace .modou_use .title,.orderPlace .pay_stage .title,.orderPlace .presale .title {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+    color: #333
+}
+
+.orderPlace .pay_stage .slider,.orderPlace .presale .slider {
+    position: absolute;
+    background: #fff;
+    width: 50px;
+    height: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 25px;
+    right: 15px;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%)
+}
+
+.orderPlace .slider .slider_btn {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 0;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 50%;
+    box-shadow: 1px 2px rgba(0,0,0,.2)
+}
+
+.orderPlace .slider .on {
+    background: #f43c32
+}
+
+.orderPlace .slider .on .slider_btn {
+    left: 18px;
+    transition: linear .5s;
+    -webkit-transition: linear .5s
+}
+
+.orderPlace .pay_stage .hint {
+    margin-right: 66px;
+    color: #f43c32
+}
+
+.orderPlace .modou_use .md_in_use,.orderPlace .pay_stage .hint {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px
+}
+
+.orderPlace .red_bag_pay {
+    padding: 14px;
+    background: #fff;
+    border-top: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    margin-top: 1px
+}
+
+.orderPlace .red_bag_pay .red_bag_price {
+    color: #f43c32
+}
+
+.select-modal {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.select-modal .cp_mask {
+    position: absolute;
+    width: 100%;
+    background-color: hsla(0,0%,67%,.5)
+}
+
+.select-modal .cp_content {
+    z-index: 10;
+    width: 90%;
+    margin: 5%;
+    position: absolute;
+    top: 18%;
+    border-radius: 3px;
+    background-color: #fff
+}
+
+.select-modal .cp_content .cp_title {
+    text-align: center;
+    color: #ff5777;
+    font-size: 15px;
+    padding: 14px
+}
+
+.select-modal .cp_content .cp_item {
+    border-top: 1px solid #e8e8e8;
+    font-size: 13px;
+    padding: 14px 20px
+}
+
+.select-modal .cp_content .cp_item i {
+    font-size: 19px;
+    color: #d6d7d9
+}
+
+.select-modal .cp_content .cp_item:hover {
+    background-color: #f0f0f0
+}
+
+.select-modal .cp_content .cp_active i {
+    color: #f36081
+}
+
+.viewport {
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto
+}
+
+.overview {
+    list-style: none;
+    left: 0;
+    top: 0;
+    width: 100%
+}
+
+.scrollbar {
+    position: relative;
+    float: right;
+    width: 15px;
+    background: url(http://s17.mogucdn.com/p1/151228/upload_ie3tqyjzmfsdszlcguzdambqgayde_15x480.png) 0 0 no-repeat transparent;
+    background-position: 0 0
+}
+
+.scrollbar .track {
+    height: 100%;
+    width: 13px;
+    position: relative;
+    padding: 0 1px;
+    background: url(http://s18.mogucdn.com/p1/151228/upload_ifqwenjsmjsdszlcguzdambqgyyde_15x11.png) 0 100% no-repeat transparent
+}
+
+.scrollbar .thumb {
+    height: 20px;
+    width: 13px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    background: url(http://s18.mogucdn.com/p1/151228/upload_ie4tomzrmfsdszlcguzdambqgqyde_13x480.png) 50% 100% no-repeat transparent
+}
+
+.scrollbar .thumb .end {
+    overflow: hidden;
+    height: 5px;
+    width: 13px
+}
+
+.disable .end,.disable .thumb {
+    display: none
+}
+
+.scrollHg {
+    height: 200px
+}
+
+.overview .pos {
+    position: absolute
+}
+
+.orderPlace .presale_cls {
+    color: #f43c32
+}
+
+.orderPlace .presale_color {
+    color: #000
+}
+
+.orderPlace .mask {
+    background: #000;
+    opacity: .5
+}
+
+.orderPlace .mask,.orderPlace .presale_rule {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%
+}
+
+.orderPlace .presale_rule {
+    padding: 20px;
+    color: #333
+}
+
+.orderPlace .presale_bg {
+    margin-top: -65px
+}
+
+.orderPlace .presale_bg img {
+    width: 120px
+}
+
+.orderPlace .presale_close {
+    position: absolute;
+    right: 20px;
+    top: 15px
+}
+
+.orderPlace .presale_content {
+    overflow: auto
+}
+
+.orderPlace .presale_con {
+    position: absolute;
+    width: 90%;
+    padding: 20px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    background: #fff
+}
+
+.orderPlace .presale_con p {
+    margin-bottom: 10px
+}
+
+.ui-btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: none;
+    background-image: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.ui-btn-pink {
+    color: #fff;
+    background: #ff5e7a;
+    background: -webkit-linear-gradient(top,#ff5e7a,#f24868);
+    background: linear-gradient(top,#ff5e7a,#f24868);
+}
+.orderPlace .detail .detail_head .contact_seller:before {
+    color: #f43c32;
+    font-size: 21px;
+    display: inline-block;
+    float: left;
+    margin-right: 3px;
+}

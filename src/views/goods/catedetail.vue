@@ -1,4 +1,9 @@
 <style src="../../../src/assets/styles/module/goods/detail.css"></style>
+<style>
+  html{
+    font-size: 25px
+  }
+</style>
 <template>
   <div class="ui-app" id="views">
     <div id="DetailPrimary">
@@ -7,7 +12,7 @@
         <!-- 导航条 -->
         <div class="primary-navbar clearfix">
           <a href="javascript:void(history.back());" class="back icon-uniE809"></a>
-          <a href="/x6/cart/list?sfrom=http%3A%2F%2Fm.mogujie.com%2Fx6%2Fdetail%2F1jugeag%3Facm%3D1.ms.1.0.1383.0GlpKRdOv6d.277%26ptp%3Dm1._mf1_h5goodswall._book_shopping_10054926_h5-newtype_noab-noab_wall_docs.1.YPGW2" class="cart icon-uniE810"></a>
+          <a class="cart icon-uniE810" v-link="{name:'cart'}"></a>
         </div>
 
         <!-- 图片轮播 -->
@@ -42,13 +47,13 @@
 
 
         <!-- 大促倒计时 -->
-        <div class="primary-countdown">
+        <!-- <div class="primary-countdown">
           <div class="inner">
             <i class="icon fl ml30"></i>
             <span class="desc fl ml15">距团购结束还剩<span class="time J_EventCountDown clock-on" data-timestamp="169917">1天22小时16分51秒</span>
             </span>
           </div>
-        </div>
+        </div> -->
         <!-- 基本信息 -->
         <div class="primary-info">
           <div class="info-title break">
@@ -116,13 +121,6 @@
           </span>
         </div>
 
-
-
-
-
-
-
-
         <!-- 商品详情-工具条 -->
         <div class="detail-wrap detail-footbar" id="DetailFootbar">
           <!-- 私聊 -->
@@ -137,14 +135,14 @@
           </div>
           <!-- 购买 -->
           <div class="footbar-buy">
-            <span class="buy-cart">加入购物车</span>
-            <span class="buy-now">立即购买</span>
+            <span class="buy-cart" @click.stop="openCartbox">加入购物车</span>
+            <span class="buy-now" v-link="{name:'order'}">立即购买</span>
           </div>
         </div>
 
 
         <!-- 商品规格选择框 -->
-        <section id="J_GoodsSku" class="goods-sku" style="visibility: visible;"> 
+        <section id="J_GoodsSku" class="goods-sku" v-show="cartbox.show" @click.stop> 
         <div class="content">  
           <div class="sku-list"> 
             <dl class="style clearfix"> 
@@ -195,7 +193,7 @@
             <div class="action"> 
               <span class="confirm ui-btn ui-btn-pink">确定</span> 
             </div> 
-            <span class="close">╳</span> 
+            <span class="close" @click="closeCartbox">╳</span> 
           </div>
         </section>
 
@@ -203,52 +201,88 @@
       </div>
 
     </div>
+
+    <!--遮罩层组件-->
+    <mask :show="mask"></mask>
   </div>
 </template>
 
 <script>
+  //加载公用小组件
   import '../../../node_modules/vue-swipe/lib/vue-swipe.css'
-  import { Swipe, SwipeItem } from 'vue-swipe'
+  import { Swipe, SwipeItem } from 'vue-swipe'//轮播图组件
+  import Mask from '../../components/mask.vue'//遮罩层组件
 
- export default {
-    data () {
-      return{
-        topswipe:[],
-        list:[]
-      }
-    },
-    components: {
-      Swipe,SwipeItem
-    },
-    route: {
-      data(transition){
-        //请求列表全部数据
-        this.getAjax(transition)
-      }
-    },
-    methods: {
-      //请求列表全部数据
-      getAjax(transition){
-        const self = this
-        const mt = transition.to.params.mt
-        let successCallback =(response) => {
-          const data = response.data
-          const json = data.result
-          self.$route.router.app.loading = false
-          if(data.status.code ==1001){
-            //实时异步队列更新数据
-            console.log(json.itemInfo.topImages)
-            transition.next({
-              topswipe:json.itemInfo.topImages
-            })
+   export default {
+      data () {
+        return{
+          topswipe:[],
+          list:[],
+          cartbox:{
+            show:false
+          },
+          mask:false
+        }
+      },
+      components: {
+        Swipe,SwipeItem,Mask
+      },
+      route: {
+        data(transition){
+          var self = this
+          //请求列表全部数据
+          self.getAjax(transition)
+          document.querySelector("html").style.fontSize='25px'
+          window.onresize = function () {
+            document.querySelector("html").style.fontSize='20px'
           }
+          document.addEventListener('click', ()=>{
+            self.cartbox.show = false
+            self.mask = false
+          })
         }
-        let errorCallback = (json)=> {
-          //console.log(json)
+      },
+      destroy () {
+          var self = this
+          document.removeEventListener('click', ()=>{
+            self.cartbox.show = false
+            self.mask = false
+          })
+      },
+      methods: {
+        //请求列表全部数据
+        getAjax (transition) {
+          const self = this
+          const mt = transition.to.params.mt
+          let successCallback =(response) => {
+            const data = response.data
+            const json = data.result
+            self.$route.router.app.loading = false
+            if(data.status.code ==1001){
+              //实时异步队列更新数据
+              transition.next({
+                topswipe:json.itemInfo.topImages
+              })
+            }
+          }
+
+          let errorCallback = (json)=> {
+            //console.log(json)
+          }
+
+          self.$http.get(configPath + 'goods/catedetail.json?mt='+ mt).then(successCallback, errorCallback)
+        },
+        //打开购物车盒
+        openCartbox () {
+          this.cartbox.show = true
+          this.mask = true
+        },
+        //关闭购物车盒
+        closeCartbox () {
+          this.cartbox.show = false
+          this.mask = false
         }
-        self.$http.get(configPath + 'goods/catedetail.json?mt='+ mt).then(successCallback, errorCallback)
       }
     }
-  }
 </script>
 

@@ -32,7 +32,6 @@ const router = new VueRouter({
 })
 
 require('./routers')(router);
-
 router.start(App,'app');
 
 

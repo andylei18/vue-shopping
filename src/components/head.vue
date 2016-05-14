@@ -24,7 +24,6 @@
     methods:{
       //打开菜单
       openMenuEvent(){
-        console.log(this)
         this.$parent.menu.show = true
         this.$parent.mask = true
 
