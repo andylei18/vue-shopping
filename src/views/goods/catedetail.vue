@@ -9,10 +9,11 @@
           <a href="javascript:void(history.back());" class="back icon-uniE809"></a>
           <a href="/x6/cart/list?sfrom=http%3A%2F%2Fm.mogujie.com%2Fx6%2Fdetail%2F1jugeag%3Facm%3D1.ms.1.0.1383.0GlpKRdOv6d.277%26ptp%3Dm1._mf1_h5goodswall._book_shopping_10054926_h5-newtype_noab-noab_wall_docs.1.YPGW2" class="cart icon-uniE810"></a>
         </div>
+
         <!-- 图片轮播 -->
         <div class="primary-swiper">
           <div class="swiper-container swiper-container-horizontal" id="SwiperContainer" style="height:450px">
-            <div class="swiper-wrapper">
+            <!-- <div class="swiper-wrapper">
               <div class="swiper-slide swiper-slide-active" style="height: 450px; width: 414px;">
                 <img class="swiper-img fadeIn" src="http://s18.mogucdn.com/p1/160506/74559855_ifrwcnzsgeywmyzvhazdambqhayde_640x960.jpg_468x468.jpg">
               </div>
@@ -28,10 +29,18 @@
               <div class="swiper-slide" style="height: 450px; width: 414px;">
                 <img class="swiper-img" data-original="http://s16.mogucdn.com/p1/160506/74559855_ifrtqmbyheywmyzvhazdambqhayde_741x710.jpg_468x468.jpg" src="http://m.mogujie.com/img/imgwap/loading_alpha.gif">
               </div>
-            </div>
+            </div> -->
+            <swipe :speed="900" :auto="0" :show-indicators="false">
+              <swipe-item v-for="swipe in topswipe">
+                <img class="swiper-img fadeIn" :src="swipe">
+              </swipe-item>
+            </swipe>
+
           </div>
           <div class="swiper-page swiper-page-up"><em id="SwiperPageNum">1</em><i>/</i>5</div>
         </div>
+
+
         <!-- 大促倒计时 -->
         <div class="primary-countdown">
           <div class="inner">
@@ -134,6 +143,61 @@
         </div>
 
 
+        <!-- 商品规格选择框 -->
+        <section id="J_GoodsSku" class="goods-sku" style="visibility: visible;"> 
+        <div class="content">  
+          <div class="sku-list"> 
+            <dl class="style clearfix"> 
+              <dt>颜色：</dt> 
+              <dd>  
+                <div class="viewport"> 
+                  <div class="overview"> 
+                    <ol class="J_StyleList style-list clearfix">
+                      <li class="c" data-id="1" title="红色"> 红色</li>
+                    </ol>
+                  </div> 
+                </div> 
+              </dd> 
+            </dl> 
+            <dl class="size clearfix"> 
+              <dt>尺码：</dt> 
+              <dd>  
+                <div class="viewport"> 
+                  <div class="overview"> 
+                    <ol class="J_SizeList size-list clearfix">
+                      <li class="" data-id="100" title="S"> S</li>
+                      <li class="c" data-id="101" title="M"> M</li>
+                      <li class="" data-id="102" title="L"> L</li>
+                    </ol> 
+                   </div> 
+                 </div> 
+                </dd> 
+              </dl> 
+            </div>  
+            <div class="sku-num"> 
+              <p class="title">数量:</p> 
+              <div class="clearfix"> 
+                <div class="sku-counter fl"> 
+                  <span class="num-reduce fl"> 
+                    <b class="reduce-icon">－</b> 
+                  </span> 
+                  <em class="num-input fl">20</em> 
+                  <span class="num-add fl"> 
+                    <b class="add-icon">＋</b>                     
+                  </span> 
+                </div> 
+                <div class="sku-stock fl"> 库存<span class="stock">998</span>件 </div> 
+              </div> 
+            </div> 
+            <div class="sku-price"> 
+              <p class="title">总价：<span class="price m-color">¥576.00</span><span class="m-color">元</span></p> 
+            </div> 
+            <div class="action"> 
+              <span class="confirm ui-btn ui-btn-pink">确定</span> 
+            </div> 
+            <span class="close">╳</span> 
+          </div>
+        </section>
 
 
       </div>
@@ -143,49 +207,48 @@
 </template>
 
 <script>
+  import '../../../node_modules/vue-swipe/lib/vue-swipe.css'
+  import { Swipe, SwipeItem } from 'vue-swipe'
 
-  export default {
-    data(){
-    return{
-      list:[]
-    }
-  },
-  route: {
-    data(transition){
-
+ export default {
+    data () {
+      return{
+        topswipe:[],
+        list:[]
+      }
+    },
+    components: {
+      Swipe,SwipeItem
+    },
+    route: {
+      data(transition){
+        //请求列表全部数据
+        this.getAjax(transition)
+      }
+    },
+    methods: {
       //请求列表全部数据
-      this.getAjax(transition)
-
-    }
-  },
-  methods: {
-    //请求列表全部数据
-    getAjax(transition){
-      const _self = this
-      const _mt = transition.to.params.mt
-
-      let successCallback =(json) => {
-        const jsondata = json.data
-
-        _self.$route.router.app.loading = false
-
-        if(jsondata&&jsondata.code==0){
-          //实时异步队列更新数据
-          transition.next({
-            list:jsondata.data
-          })
+      getAjax(transition){
+        const self = this
+        const mt = transition.to.params.mt
+        let successCallback =(response) => {
+          const data = response.data
+          const json = data.result
+          self.$route.router.app.loading = false
+          if(data.status.code ==1001){
+            //实时异步队列更新数据
+            console.log(json.itemInfo.topImages)
+            transition.next({
+              topswipe:json.itemInfo.topImages
+            })
+          }
         }
-
+        let errorCallback = (json)=> {
+          //console.log(json)
+        }
+        self.$http.get(configPath + 'goods/catedetail.json?mt='+ mt).then(successCallback, errorCallback)
       }
-
-      let errorCallback = (json)=> {
-        //console.log(json)
-      }
-
-      _self.$http.get(configPath + 'goods/catelist.json?mt='+ _mt).then(successCallback, errorCallback)
-
     }
-  }
   }
 </script>
 
