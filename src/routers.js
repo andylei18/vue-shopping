@@ -69,14 +69,25 @@ module.exports = function(router){
             return require(['./views/order/index.vue'],reslove)
           }
         },
-        //收货地址页面
-        '/address':{
-          name:'address',
-          //异步处理大量数据
-          component: function(reslove){
-            return require(['./views/order/address.vue'],reslove)
-          }
-        },
+         //订单列表页面
+          '/orderlist':{
+            name:'orderlist',
+            //异步处理大量数据
+            component: function(reslove){
+              return require(['./views/order/list.vue'],reslove)
+            }
+          },
+          //收货地址页面
+          '/address':{
+            name:'address',
+            //异步处理大量数据
+            component: function(reslove){
+              return require(['./views/order/address.vue'],reslove)
+            }
+          },
+
+
+
         //个人中心模块  入口页面
         '/usercenter':{
           name:'usercenter',
