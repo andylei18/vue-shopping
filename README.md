@@ -1,5 +1,7 @@
 # 蘑菇街移动端Vue-SPA(纯属个人玩法,不用于商务)
+========
 
+Live Demo: [http://andylei18.github.io/vue-shopping/](http://andylei18.github.io/vue-shopping/)
 ## 安装：
   <pre>npm install</pre>
 ## 运行：
