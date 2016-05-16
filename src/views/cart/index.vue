@@ -130,7 +130,7 @@
           this.result.shopGroup.forEach(shop => {
             shop.cartItemGroup.forEach(item => {
               if (item['selected']) {
-                price += item.number * item.sku.nowprice
+                price += item.number * item.sku.price
               }
             })
           })
@@ -141,7 +141,7 @@
           this.result.shopGroup.forEach(shop => {
             shop.cartItemGroup.forEach(item => {
               if (item['selected']) {
-                price += item.number * item.sku.price
+                price += item.number * item.sku.nowprice
               }
             })
           })
@@ -201,8 +201,17 @@
             })
           })
         },
-        calcitemNum (step, item) {
-          item.number += Math.floor(step)
+        calcitemNum (step, obj) {
+          //item.number += Math.floor(step)
+          if(step == -1){
+              if(obj.number <= obj.sku.stock && obj.number > 1){
+                  obj.number = parseInt(obj.number) - 1;
+              }
+          }else{
+              if(obj.number < obj.sku.stock){
+                  obj.number = parseInt(obj.number) + 1;
+              }
+          }
         },
         //请求列表全部数据
         getAjax (transition) {
