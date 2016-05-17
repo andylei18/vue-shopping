@@ -1,5 +1,5 @@
 # 蘑菇街移动端Vue-SPA(纯属个人玩法,不用于商务)
-# vue-spinner
+# vue-shopping
 ========
 
 ## [Live demo]: [http://andylei18.github.io/vue-shopping/](http://andylei18.github.io/vue-shopping/)
