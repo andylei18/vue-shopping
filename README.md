@@ -2,7 +2,7 @@
 # vue-shopping
 ========
 
-## [Live demo]: [http://andylei18.github.io/vue-shopping/](http://andylei18.github.io/vue-shopping/)
+## [Live demo]（http://andylei18.github.io/vue-shopping/](http://andylei18.github.io/vue-shopping/)
 ## 安装：
   <pre>npm install</pre>
 ## 运行：
