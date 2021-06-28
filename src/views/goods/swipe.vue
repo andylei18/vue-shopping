@@ -1,4 +1,4 @@
-<style src="../../../node_modules/vue-swipe/lib/vue-swipe.css"></style>
+<style src="../../../node_modules/vue-swipe/dist/vue-swipe.css"></style>
 <style>
   .head-banner {
     width: 100%;
