@@ -142,58 +142,58 @@
 
 
         <!-- 商品规格选择框 -->
-        <section id="J_GoodsSku" class="goods-sku" v-show="cartbox.show" @click.stop> 
-        <div class="content">  
-          <div class="sku-list"> 
-            <dl class="style clearfix"> 
-              <dt>颜色：</dt> 
-              <dd>  
-                <div class="viewport"> 
-                  <div class="overview"> 
+        <section id="J_GoodsSku" class="goods-sku" v-show="cartbox.show" @click.stop>
+        <div class="content">
+          <div class="sku-list">
+            <dl class="style clearfix">
+              <dt>颜色：</dt>
+              <dd>
+                <div class="viewport">
+                  <div class="overview">
                     <ol class="J_StyleList style-list clearfix">
                       <li class="c" data-id="1" title="红色"> 红色</li>
                     </ol>
-                  </div> 
-                </div> 
-              </dd> 
-            </dl> 
-            <dl class="size clearfix"> 
-              <dt>尺码：</dt> 
-              <dd>  
-                <div class="viewport"> 
-                  <div class="overview"> 
+                  </div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="size clearfix">
+              <dt>尺码：</dt>
+              <dd>
+                <div class="viewport">
+                  <div class="overview">
                     <ol class="J_SizeList size-list clearfix">
                       <li class="" data-id="100" title="S"> S</li>
                       <li class="c" data-id="101" title="M"> M</li>
                       <li class="" data-id="102" title="L"> L</li>
-                    </ol> 
-                   </div> 
-                 </div> 
-                </dd> 
-              </dl> 
-            </div>  
-            <div class="sku-num"> 
-              <p class="title">数量:</p> 
-              <div class="clearfix"> 
-                <div class="sku-counter fl"> 
-                  <span class="num-reduce fl"> 
-                    <b class="reduce-icon">－</b> 
-                  </span> 
-                  <em class="num-input fl">20</em> 
-                  <span class="num-add fl"> 
-                    <b class="add-icon">＋</b>                     
-                  </span> 
-                </div> 
-                <div class="sku-stock fl"> 库存<span class="stock">998</span>件 </div> 
-              </div> 
-            </div> 
-            <div class="sku-price"> 
-              <p class="title">总价：<span class="price m-color">¥576.00</span><span class="m-color">元</span></p> 
-            </div> 
-            <div class="action"> 
-              <span class="confirm ui-btn ui-btn-pink">确定</span> 
-            </div> 
-            <span class="close" @click="closeCartbox">╳</span> 
+                    </ol>
+                   </div>
+                 </div>
+                </dd>
+              </dl>
+            </div>
+            <div class="sku-num">
+              <p class="title">数量:</p>
+              <div class="clearfix">
+                <div class="sku-counter fl">
+                  <span class="num-reduce fl">
+                    <b class="reduce-icon">－</b>
+                  </span>
+                  <em class="num-input fl">20</em>
+                  <span class="num-add fl">
+                    <b class="add-icon">＋</b>
+                  </span>
+                </div>
+                <div class="sku-stock fl"> 库存<span class="stock">998</span>件 </div>
+              </div>
+            </div>
+            <div class="sku-price">
+              <p class="title">总价：<span class="price m-color">¥576.00</span><span class="m-color">元</span></p>
+            </div>
+            <div class="action">
+              <span class="confirm ui-btn ui-btn-pink">确定</span>
+            </div>
+            <span class="close" @click="closeCartbox">╳</span>
           </div>
         </section>
 
@@ -209,7 +209,7 @@
 
 <script>
   //加载公用小组件
-  import '../../../node_modules/vue-swipe/lib/vue-swipe.css'
+  import '../../../node_modules/vue-swipe/dist/vue-swipe.css'
   import { Swipe, SwipeItem } from 'vue-swipe'//轮播图组件
   import Mask from '../../components/mask.vue'//遮罩层组件
 

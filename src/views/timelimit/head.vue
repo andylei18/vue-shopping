@@ -71,7 +71,7 @@
 
 <script>
 
-  import '../../../node_modules/vue-swipe/lib/vue-swipe.css'
+  import '../../../node_modules/vue-swipe/dist/vue-swipe.css'
   import { Swipe, SwipeItem } from 'vue-swipe';
 
 
